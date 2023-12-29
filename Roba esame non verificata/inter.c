@@ -30,7 +30,7 @@ void	ft_inter(char *s1, char *s2)
 				if (s2[j] == s1[i])
 				{
 					write(1, &s1[i], 1);
-//					break ;
+					break;
 				}
 				j++;
 			}
