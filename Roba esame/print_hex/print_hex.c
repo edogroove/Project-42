@@ -20,11 +20,11 @@ int	ft_atoi(char *str)
 	return (ris);
 }
 
-
 void	print_hex(int n)
 {
-	char *hex = "0123456789abcdef";
+	char	*hex;
 
+	hex = "0123456789abcdef";
 	if (n >= 16)
 		print_hex(n / 16);
 	n = n % 16;
