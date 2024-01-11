@@ -3,8 +3,9 @@
 
 int	len(long nb)
 {
-	int	len = 0;
+	int	len;
 
+	len = 0;
 	if (nb < 0)
 	{
 		nb *= -1;
@@ -26,7 +27,7 @@ char	*ft_itoa(int nb)
 
 	n = nb;
 	i = len(n);
-	if(!(str = (char *)malloc(i + 1)))
+	if (!(str = (char *)malloc(i + 1)))
 		return(0);
 	str[i--] = '\0';
 	if (n == 0)
@@ -34,7 +35,7 @@ char	*ft_itoa(int nb)
 		str[0] = 48;
 		return(str);
 	}
-	if(n < 0)
+	if (n < 0)
 	{
 		str[0] = '-';
 		n *= -1;
@@ -52,6 +53,6 @@ int	main(void)
 {
 	int n;
 
-	n = 273883;
+	n = -2783;
 	printf("%s\n", ft_itoa(n));
 }
