@@ -45,7 +45,7 @@ char    **ft_split(char *str)
     out[k] = NULL;
     return (out);
 }
-/*
+
 int main(void)
 {
     char    str[] = "ciao come va";
@@ -61,4 +61,3 @@ int main(void)
     }
     return 0;
 }
-*/
