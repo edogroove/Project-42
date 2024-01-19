@@ -23,7 +23,7 @@ char	*ft_itoa(int nb)
 {
 	char	*str;
 	long	n;
-	int	i;
+	int		i;
 
 	n = nb;
 	i = len(n);
@@ -53,6 +53,6 @@ int	main(void)
 {
 	int n;
 
-	n = -2783;
+	n = -2147483648;
 	printf("%s\n", ft_itoa(n));
 }

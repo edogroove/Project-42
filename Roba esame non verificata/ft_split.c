@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char *ft_strncpy(char *s1, char *s2, int n)
+char    *ft_strncpy(char *s1, char *s2, int n)
 {
     int i = -1;
 
@@ -27,7 +27,7 @@ char    **ft_split(char *str)
         while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
             i++;
     }
-    char **out = (char **)malloc(sizeof(char *) * (wc + 1));
+    char **out = malloc(sizeof(char *) * (wc + 1));
     i = 0;
     while (str[i])
     {
@@ -46,9 +46,9 @@ char    **ft_split(char *str)
     return (out);
 }
 
-int main(void)
+int     main(void)
 {
-    char    str[] = "ciao come va";
+    char    *str = "  ciao come va zzz ? ooo";
     char    **out;
     int     i;
 
