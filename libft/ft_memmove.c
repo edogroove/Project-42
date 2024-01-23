@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
+/*   By: parallels <parallels@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 16:15:39 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/23 18:00:53 by enanni           ###   ########.fr       */
+/*   Updated: 2024/01/23 22:14:12 by parallels        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (dest > src)
 	{
 		while (n--)
-			*((unsigned char *)(dest + n)) = *((unsigned char *)(src + n));
+			*(unsigned char *)(dest + n) = *(unsigned char *)(src + n);
 	}
 	else
 		ft_memcpy(dest, src, n);
@@ -28,11 +28,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 /* int main()
 {
-    char str1[] = "Hello, World!";
-    char str2[] = "ciao merdaaaaaaaaaaaaaaaaaa";
-    ft_memmove(str2, str1, 1);
+    char str1[] = "ciao";
+    char str2[] = "zzzz sono edo";
+    ft_memmove(str2, str1, 4);
 	printf("%s\n", str2);
-	memmove(str2, str1, 1);
+	memmove(str2, str1, 4);
     printf("%s\n", str2);
     return 0;
 } */

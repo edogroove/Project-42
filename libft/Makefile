@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
+#    By: parallels <parallels@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 15:12:39 by enanni            #+#    #+#              #
-#    Updated: 2024/01/23 17:59:18 by enanni           ###   ########.fr        #
+#    Updated: 2024/01/23 22:32:51 by parallels        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS =	ft_isalpha.c \
 		ft_bzero.c \
 		ft_memcpy.c \
 		ft_memmove.c \
+		ft_strlcpy.c \
 
 OBJS = $(SRCS:.c=.o)
 FLAGS = -Wall -Wextra -Werror
