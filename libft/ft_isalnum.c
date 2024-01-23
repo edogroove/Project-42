@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 22:15:05 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/22 22:33:20 by enanni           ###   ########.fr       */
+/*   Created: 2024/01/22 22:13:02 by enanni            #+#    #+#             */
+/*   Updated: 2024/01/23 06:54:06 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_isalnum(int c)
 {
-	if (c >= '0' && c <= '9')
+	if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z')
+		|| (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }
 
 /* int	main()
 {
-	int		c;
+	char	c;
 
-	c = '5';
-	printf("%d\n", ft_isdigit(c));
+	c = '0';
+	printf("%d\n", ft_isalnum(c));
 	return (0);
 } */

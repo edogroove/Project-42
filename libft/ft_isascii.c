@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 22:15:05 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/22 22:33:20 by enanni           ###   ########.fr       */
+/*   Created: 2024/01/23 06:48:26 by enanni            #+#    #+#             */
+/*   Updated: 2024/01/23 06:48:29 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_isascii(int c)
 {
-	if (c >= '0' && c <= '9')
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }
 
-/* int	main()
+/* int main()
 {
-	int		c;
+	char	c;
 
-	c = '5';
-	printf("%d\n", ft_isdigit(c));
+	c = '&';
+	printf("%d\n", ft_isascii(c));
 	return (0);
 } */

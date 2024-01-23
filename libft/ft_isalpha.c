@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enanni <enanni@student.42.fr>              +#+  +:+       +#+        */
+/*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 16:36:20 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/22 17:55:54 by enanni           ###   ########.fr       */
+/*   Created: 2024/01/22 22:14:57 by enanni            #+#    #+#             */
+/*   Updated: 2024/01/22 22:30:26 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 int	ft_isalpha(int c)
 {
-	if ((c <= 'z' && c >= 'a') || (c <= 'Z' && c >= 'A'))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
 	return (0);
 }
 
-/* int main()
+/* int	main()
 {
-	char c = 'z';
+	char	c;
+
+	c = 'a';
 	printf("%d\n", ft_isalpha(c));
 	return (0);
 } */

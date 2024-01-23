@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 22:15:05 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/22 22:33:20 by enanni           ###   ########.fr       */
+/*   Created: 2024/01/23 15:36:47 by enanni            #+#    #+#             */
+/*   Updated: 2024/01/23 16:13:09 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	if (src == NULL && dest == NULL)
+		return (NULL);
+	while (i < n)
+	{
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	return (dest);
 }
 
-/* int	main()
+/* int main()
 {
-	int		c;
+	char src[] = "Ciaoo";
+	char dest[20];
 
-	c = '5';
-	printf("%d\n", ft_isdigit(c));
-	return (0);
+	ft_memcpy(dest, src, strlen(src) + 1);
+	printf("Test case 1: Copied string: %s\n", dest);
+	return 0;
 } */

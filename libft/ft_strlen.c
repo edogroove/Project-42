@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 22:15:05 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/22 22:33:20 by enanni           ###   ########.fr       */
+/*   Created: 2024/01/23 07:13:43 by enanni            #+#    #+#             */
+/*   Updated: 2024/01/23 18:10:38 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+size_t	ft_strlen(const char *s)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
 }
 
 /* int	main()
 {
-	int		c;
+	const char	*s;
 
-	c = '5';
-	printf("%d\n", ft_isdigit(c));
+	s = "55555";
+	printf("%zu\n", ft_strlen(s));
 	return (0);
 } */
