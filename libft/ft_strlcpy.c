@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: parallels <parallels@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 22:25:58 by parallels         #+#    #+#             */
-/*   Updated: 2024/01/24 10:03:51 by codespace        ###   ########.fr       */
+/*   Updated: 2024/01/24 16:38:49 by parallels        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,33 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	len;
+	size_t	i;
 
 	i = 0;
-	len = 0;
-	if (dest == NULL && src == NULL)
-		return (0);
-	while (src[len])
-		len++;
 	if (size == 0)
-		return (len);
-	while (src[i] && i < size - 1)
+	{
+		while (src[i])
+			i++;
+		return (i);
+	}
+	while (i < size - 1 && src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	if (size != 0)
+	if (i < size)
 		dest[i] = '\0';
-	return (len);
+	while (src[i] != '\0')
+		i++;
+	return (i);
 }
 
 /* int main()
 {
-    char    *src;
-    char    *dest;
+    char    src[5] = "ciao";
+    char    dest[9] = "ab";
 
-    src = "ciao";
-    dest = "";
-    ft_strlcpy(dest, src, 4);
-    printf("%s", dest);
+    ft_strlcpy(dest, src, 5);
+    printf("%s\n", dest);
     return (0);
 } */
