@@ -1,46 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 11:46:32 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/25 16:26:36 by enanni           ###   ########.fr       */
+/*   Created: 2024/01/25 16:32:07 by enanni            #+#    #+#             */
+/*   Updated: 2024/01/25 16:58:58 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <bsd/string.h> e compilare con -lbsd
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_toupper(int c)
 {
-	size_t	i;
-	size_t	k;
-
-	i = 0;
-	k = 0;
-	while (i < size && dst[i])
-	{
-		i++;
-	}
-	while ((i + k + 1) < size && src[k])
-	{
-		dst[i + k] = src[k];
-		k++;
-	}
-	if (i != size)
-	{
-		dst[i + k] = '\0';
-	}
-	return (i + ft_strlen(src));
+	if (c >= 97 && c <= 122)
+		c -= 32;
+	return (c);
 }
 
 /* int	main()
 {
-	char	src[] = "prova";
-	char	dst[] = "cat";
-	ft_strlcat(dst, src, 6);
-	printf("%s\n", dst);
-	return (0);
+	int	a;
+	int	b;
+
+	a = 'a';
+	b = ft_toupper(a);
+	printf("%c\n", b);
 } */

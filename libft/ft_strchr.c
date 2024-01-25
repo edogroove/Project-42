@@ -1,46 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 11:46:32 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/25 16:26:36 by enanni           ###   ########.fr       */
+/*   Created: 2024/01/25 17:11:52 by enanni            #+#    #+#             */
+/*   Updated: 2024/01/25 18:43:02 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <bsd/string.h> e compilare con -lbsd
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	size_t	k;
-
-	i = 0;
-	k = 0;
-	while (i < size && dst[i])
+	while ((char)c != *s)
 	{
-		i++;
+		if (*s == '\0')
+			return (0);
+		s++;
 	}
-	while ((i + k + 1) < size && src[k])
-	{
-		dst[i + k] = src[k];
-		k++;
-	}
-	if (i != size)
-	{
-		dst[i + k] = '\0';
-	}
-	return (i + ft_strlen(src));
+	return ((char *)s);
 }
 
 /* int	main()
 {
-	char	src[] = "prova";
-	char	dst[] = "cat";
-	ft_strlcat(dst, src, 6);
-	printf("%s\n", dst);
-	return (0);
+	char s[] = "Ciao, mondo!";
+    char c = 'd';
+    char *p;
+
+    p = ft_strchr(s, c);
+	printf("%s", p);
 } */
