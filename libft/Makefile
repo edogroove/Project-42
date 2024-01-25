@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: parallels <parallels@student.42.fr>        +#+  +:+       +#+         #
+#    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/22 15:12:39 by enanni            #+#    #+#              #
-#    Updated: 2024/01/24 17:28:36 by parallels        ###   ########.fr        #
+#    Created: 2024/01/25 11:37:03 by enanni            #+#    #+#              #
+#    Updated: 2024/01/25 11:37:06 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

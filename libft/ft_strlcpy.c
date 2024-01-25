@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parallels <parallels@student.42.fr>        +#+  +:+       +#+        */
+/*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 22:25:58 by parallels         #+#    #+#             */
-/*   Updated: 2024/01/24 16:38:49 by parallels        ###   ########.fr       */
+/*   Created: 2024/01/25 11:36:40 by enanni            #+#    #+#             */
+/*   Updated: 2024/01/25 11:36:46 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
@@ -25,11 +25,11 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	}
 	while (i < size - 1 && src[i] != '\0')
 	{
-		dest[i] = src[i];
+		dst[i] = src[i];
 		i++;
 	}
 	if (i < size)
-		dest[i] = '\0';
+		dst[i] = '\0';
 	while (src[i] != '\0')
 		i++;
 	return (i);
@@ -38,9 +38,9 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 /* int main()
 {
     char    src[5] = "ciao";
-    char    dest[9] = "ab";
+    char    dst[9] = "ab";
 
-    ft_strlcpy(dest, src, 5);
-    printf("%s\n", dest);
+    ft_strlcpy(dst, src, 5);
+    printf("%s\n", dst);
     return (0);
 } */
