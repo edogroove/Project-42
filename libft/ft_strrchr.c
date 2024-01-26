@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 17:11:52 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/26 09:42:28 by enanni           ###   ########.fr       */
+/*   Created: 2024/01/26 09:12:01 by enanni            #+#    #+#             */
+/*   Updated: 2024/01/26 09:49:09 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h" // NON FUNZIONA
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	while ((char)c != *s)
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (s[j] != '\0')
 	{
-		if (*s == '\0')
-			return (0);
-		s++;
+		if ((char)c == s[j])
+			i = j;
+		j++;
 	}
-	return ((char *)s);
+	if (i == 0)
+		return (0);
+	else
+		return ((char *)&s[i]);
 }
 
 /* int	main()
 {
 	char s[] = "Ciao, mondo!";
-    char c = 'd';
+    char c = '\0';
     char *p;
 
-    p = ft_strchr(s, c);
-	printf("%s", p);
+    p = ft_strrchr(s, c);
+	printf("%s\n", p);
 } */

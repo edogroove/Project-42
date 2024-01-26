@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 11:37:03 by enanni            #+#    #+#              #
-#    Updated: 2024/01/25 18:21:26 by enanni           ###   ########.fr        #
+#    Updated: 2024/01/26 09:45:49 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS =	ft_isalpha.c \
 		ft_toupper.c \
 		ft_tolower.c \
 		ft_strchr.c \
+		ft_strrchr.c \
 
 OBJS = $(SRCS:.c=.o)
 FLAGS = -Wall -Wextra -Werror
