@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/29 09:47:10 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/29 14:41:45 by enanni           ###   ########.fr       */
+/*   Created: 2024/01/29 14:47:19 by enanni            #+#    #+#             */
+/*   Updated: 2024/01/29 15:21:00 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	unsigned char	*p1;
+	unsigned char	*p2;
+	size_t			i;
 
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] == s2[i] && i < n - 1 && s1[i] && s2[i])
+	while (i < n)
 	{
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
 		i++;
 	}
-	return ((unsigned char)(s1[i]) - (unsigned char)(s2[i]));
+	return (0);
 }
 
-/* int main()
+/* int	main()
 {
-    char    *c;
-    char    *d;
+	char	*s1;
+	char	*s2;
 
-    c = "ft";
-    d = "tf";
-    printf("%d\n", ft_strncmp(c, d, 5));
-	printf("%d\n", strncmp(c, d, 5));
+	s1 = "test b";
+	s2 = "test a";
+	printf("%d\n", ft_memcmp(s1, s2, 6));
+	printf("%d\n", memcmp(s1, s2, 6));
 } */

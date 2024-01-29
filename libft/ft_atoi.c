@@ -1,38 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/29 09:47:10 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/29 14:41:45 by enanni           ###   ########.fr       */
+/*   Created: 2024/01/29 19:46:34 by enanni            #+#    #+#             */
+/*   Updated: 2024/01/29 20:07:20 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_atoi(const char *nptr)
 {
-	size_t	i;
+	int	i;
+	int	sign;
+	int	res;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] == s2[i] && i < n - 1 && s1[i] && s2[i])
+	sign = 1;
+	res = 0;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
+		if (nptr[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	return ((unsigned char)(s1[i]) - (unsigned char)(s2[i]));
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		res = res * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (res * sign);
 }
 
-/* int main()
+/* int	main()
 {
-    char    *c;
-    char    *d;
+	char	*c;
 
-    c = "ft";
-    d = "tf";
-    printf("%d\n", ft_strncmp(c, d, 5));
-	printf("%d\n", strncmp(c, d, 5));
+	c = "500";
+	printf("%d\n", ft_atoi(c));
 } */
