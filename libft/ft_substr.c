@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:45:50 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/01 16:36:59 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/01 18:47:25 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*new;
+	char	*str;
 	size_t	slen;
 	size_t	finish;
 
@@ -26,11 +26,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		finish = slen - start;
 	if (finish > len)
 		finish = len;
-	new = (char *)malloc(sizeof(char) * (finish + 1));
-	if (!new)
+	str = (char *)malloc(sizeof(char) * (finish + 1));
+	if (!str)
 		return (0);
-	ft_strlcpy(new, s + start, finish + 1);
-	return (new);
+	ft_strlcpy(str, s + start, finish + 1);
+	return (str);
 }
 
 /* int	main()
