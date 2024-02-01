@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:45:50 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/01 10:42:41 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/01 16:36:59 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			i;
-	char			*str;
-	unsigned int	l;
+	char	*new;
+	size_t	slen;
+	size_t	finish;
 
-	i = 0;
-	l = ft_strlen(s);
-	if (start >= l)
+	if (!s)
 		return (0);
-	str = malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	while (i < len)
-	{
-		str[i] = s[start];
-		start++;
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	slen = ft_strlen(s);
+	finish = 0;
+	if (start < slen)
+		finish = slen - start;
+	if (finish > len)
+		finish = len;
+	new = (char *)malloc(sizeof(char) * (finish + 1));
+	if (!new)
+		return (0);
+	ft_strlcpy(new, s + start, finish + 1);
+	return (new);
 }
 
 /* int	main()
@@ -41,6 +39,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str2;
 
 	str = "01234";
-	str2 = ft_substr(str, 4, 1);
+	str2 = ft_substr(str, 2, 3);
 	printf("%s\n", str2);
 } */
