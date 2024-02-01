@@ -6,17 +6,19 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 10:50:39 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/01 11:43:36 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/01 12:45:42 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	len(int n)
+static int	len(long long int n)
 {
 	int	len;
 
 	len = 0;
+	if (n == 0)
+		len = 1;
 	if (n < 0)
 	{
 		n *= -1;
@@ -32,11 +34,11 @@ static int	len(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	long	num;
-	int		i;
+	char			*str;
+	long long int	num;
+	int				i;
 
-	num = n;
+	num = (long long int)n;
 	i = len(num);
 	str = malloc(sizeof(char) * (i + 1));
 	if (str == NULL)
@@ -51,9 +53,8 @@ char	*ft_itoa(int n)
 	}
 	while (num > 0)
 	{
-		str[i] = 48 + (num % 10);
+		str[i--] = 48 + (num % 10);
 		num /= 10;
-		i--;
 	}
 	return (str);
 }
@@ -61,6 +62,6 @@ char	*ft_itoa(int n)
 /* int	main()
 {
 	char	*res;
-	res = ft_itoa(9);
+	res = ft_itoa(0);
 	printf("%s\n", res);
 } */
