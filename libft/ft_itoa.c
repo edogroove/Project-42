@@ -1,46 +1,66 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 18:45:50 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/01 10:42:41 by enanni           ###   ########.fr       */
+/*   Created: 2024/02/01 10:50:39 by enanni            #+#    #+#             */
+/*   Updated: 2024/02/01 11:43:36 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static int	len(int n)
 {
-	size_t			i;
-	char			*str;
-	unsigned int	l;
+	int	len;
 
-	i = 0;
-	l = ft_strlen(s);
-	if (start >= l)
-		return (0);
-	str = malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	while (i < len)
+	len = 0;
+	if (n < 0)
 	{
-		str[i] = s[start];
-		start++;
-		i++;
+		n *= -1;
+		len++;
 	}
-	str[i] = '\0';
+	while (n > 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	long	num;
+	int		i;
+
+	num = n;
+	i = len(num);
+	str = malloc(sizeof(char) * (i + 1));
+	if (str == NULL)
+		return (0);
+	str[i--] = '\0';
+	if (num == 0)
+		str[0] = 48;
+	if (num < 0)
+	{
+		str[0] = '-';
+		num *= -1;
+	}
+	while (num > 0)
+	{
+		str[i] = 48 + (num % 10);
+		num /= 10;
+		i--;
+	}
 	return (str);
 }
 
 /* int	main()
 {
-	char	*str;
-	char	*str2;
-
-	str = "01234";
-	str2 = ft_substr(str, 4, 1);
-	printf("%s\n", str2);
+	char	*res;
+	res = ft_itoa(9);
+	printf("%s\n", res);
 } */
