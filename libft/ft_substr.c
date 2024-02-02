@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:45:50 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/01 18:47:25 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/02 12:16:42 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 /* int	main()
 {
-	char	*str;
+//	char	*str;
 	char	*str2;
 
-	str = "01234";
-	str2 = ft_substr(str, 2, 3);
+//	str = "01234";
+	str2 = ft_substr("", 1, 1);
 	printf("%s\n", str2);
 } */

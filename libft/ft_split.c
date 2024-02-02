@@ -6,13 +6,13 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 19:50:59 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/01 23:27:26 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/02 11:57:10 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**free_array(char **ptr, int i)
+static char	**ft_free_array(char **ptr, int i)
 {
 	while (i > 0)
 	{
@@ -79,7 +79,7 @@ static char	**ft_split_words(char const *s, char c, char **s2, int num_words)
 		}
 		s2[word] = (char *)malloc(sizeof(char) * (word_len + 1));
 		if (!s2)
-			return (free_array(s2, word));
+			return (ft_free_array(s2, word));
 		ft_putword(s2[word], s, i, word_len);
 		word_len = 0;
 		word++;
