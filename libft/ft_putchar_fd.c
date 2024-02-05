@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 11:00:18 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/05 21:19:02 by enanni           ###   ########.fr       */
+/*   Created: 2024/02/05 21:12:18 by enanni            #+#    #+#             */
+/*   Updated: 2024/02/05 21:18:33 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		(*f)(i, &s[i]);
-		i++;
-	}
+	write(fd, &c, 1);
 }
-
-/* void print_index_and_char(unsigned int index, char *c)
-{
-	printf("Index: %d, Char: %c\n", index, *c);
-}
-
-int main()
-{
-	char str1[] = "Test 555";
-	
-	ft_striteri(str1, print_index_and_char);
-} */
