@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 11:37:03 by enanni            #+#    #+#              #
-#    Updated: 2024/02/06 15:56:40 by enanni           ###   ########.fr        #
+#    Updated: 2024/02/07 20:44:44 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ SRCS =	ft_isalpha.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
+		ft_lstnew.c \
 
 OBJS = $(SRCS:.c=.o)
 
