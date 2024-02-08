@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 06:25:53 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/06 13:53:49 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/08 16:45:14 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,10 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd(n + '0', fd);
 }
+
+/* int	main()
+{
+	int fd = open("test.txt", O_WRONLY);
+	ft_putnbr_fd(555, fd);
+	return(0);
+} */

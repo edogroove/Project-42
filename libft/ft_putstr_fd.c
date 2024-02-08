@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 05:58:34 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/06 06:15:27 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/08 16:23:36 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,13 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
+
+/* int	main()
+{
+	int fd = open("test.txt", O_WRONLY);
+	if (fd == -1)
+		return(1);
+	ft_putstr_fd("Ciao edo", fd);
+	close(fd);
+	return(0);
+} */

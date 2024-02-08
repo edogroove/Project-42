@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:36:55 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/08 15:43:14 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/08 16:18:44 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdlib.h>
 //# include <bsd/string.h>
 # include <stddef.h>
+# include <fcntl.h>
 
 typedef struct s_list
 {
