@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:36:40 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/25 11:44:41 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/08 16:14:55 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	if (size == 0)
 	{
-		while (src[i])
+		while (src && src[i])
 			i++;
 		return (i);
 	}
@@ -28,9 +28,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		dst[i] = src[i];
 		i++;
 	}
-	if (i < size)
-		dst[i] = '\0';
-	while (src[i] != '\0')
+	dst[i] = '\0';
+	while (src && src[i] != '\0')
 		i++;
 	return (i);
 }

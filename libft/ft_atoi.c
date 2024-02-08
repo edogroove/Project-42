@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 19:46:34 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/29 20:07:20 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/08 16:01:54 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ int	ft_atoi(const char *nptr)
 	char	*c;
 
 	c = "500";
-	printf("%d\n", ft_atoi(c));
+	prin
+	tf("%d\n", ft_atoi(c));
 } */

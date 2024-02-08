@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 11:37:03 by enanni            #+#    #+#              #
-#    Updated: 2024/02/07 20:44:44 by enanni           ###   ########.fr        #
+#    Updated: 2024/02/08 15:44:20 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,10 +44,12 @@ SRCS =	ft_isalpha.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c \
-		ft_lstnew.c \
+		ft_putnbr_fd.c
+
+BSRC =	ft_lstnew.c
 
 OBJS = $(SRCS:.c=.o)
+BOBJS = $(BSRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -55,14 +57,17 @@ $(NAME):
 		cc -c $(FLAGS) $(SRCS)
 		ar rc $(NAME) $(OBJS)
 
+bonus:		$(BOBJS) $(OBJS)
+			ar rc $(NAME) $(BOBJS) $(OBJS)
+
 all:		$(NAME)
 
 clean:
-			rm -f $(OBJS)
+			rm -f $(OBJS) $(BOBJS)
 
 fclean:		clean
 			rm -f $(NAME)
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus

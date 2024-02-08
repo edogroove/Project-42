@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 15:23:35 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/29 19:43:31 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/08 15:28:37 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	if (little == NULL || little[0] == '\0')
+	if (little[0] == '\0')
 		return ((char *)big);
 	while (big[i] != '\0' && i < len)
 	{

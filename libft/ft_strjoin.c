@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:20:19 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/31 10:38:17 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/08 16:02:49 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	len = ft_strlen(s1) + strlen(s2);
+	len = ft_strlen(s1) + ft_strlen(s2);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);

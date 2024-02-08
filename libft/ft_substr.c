@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:45:50 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/02 12:16:42 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/08 16:18:27 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	finish;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	slen = ft_strlen(s);
-	finish = 0;
-	if (start < slen)
-		finish = slen - start;
+	if (start > slen)
+		return (ft_strdup(""));
+	finish = slen - start;
 	if (finish > len)
 		finish = len;
 	str = (char *)malloc(sizeof(char) * (finish + 1));
 	if (!str)
-		return (0);
+		return (NULL);
 	ft_strlcpy(str, s + start, finish + 1);
 	return (str);
 }
@@ -39,6 +39,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str2;
 
 //	str = "01234";
-	str2 = ft_substr("", 1, 1);
+	str2 = ft_substr("ciai", -1, 100);
 	printf("%s\n", str2);
 } */

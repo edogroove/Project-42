@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 19:50:59 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/02 11:57:10 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/08 16:32:39 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static char	**ft_free_array(char **ptr, int i)
 {
-	while (i > 0)
+	while (i >= 0)
 	{
-		i--;
 		free(ptr[i]);
+		i--;
 	}
 	free(ptr);
-	return (0);
+	return (NULL);
 }
 
 static int	ft_count_words(char const *str, char c)
@@ -78,7 +78,7 @@ static char	**ft_split_words(char const *s, char c, char **s2, int num_words)
 			word_len++;
 		}
 		s2[word] = (char *)malloc(sizeof(char) * (word_len + 1));
-		if (!s2)
+		if (!s2[word])
 			return (ft_free_array(s2, word));
 		ft_putword(s2[word], s, i, word_len);
 		word_len = 0;
@@ -94,11 +94,11 @@ char	**ft_split(char const *s, char c)
 	unsigned int	num_words;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	num_words = ft_count_words(s, c);
 	s2 = (char **)malloc(sizeof(char *) * (num_words + 1));
 	if (!s2)
-		return (0);
+		return (NULL);
 	s2 = ft_split_words(s, c, s2, num_words);
 	return (s2);
 }
@@ -108,11 +108,13 @@ char	**ft_split(char const *s, char c)
 	int		i;
 
 	i = 0;
-	str = "test 555";
-	char **split_result = ft_split(str, ' ');
+	str = "test55";
+	char **split_result = ft_split("hello!", ' ');
 	while (split_result[i] != NULL)
 	{
 		printf("%s\n", split_result[i]);
+		free(split_result[i]);
 		i++;
 	}
+	free(split_result);
 } */
