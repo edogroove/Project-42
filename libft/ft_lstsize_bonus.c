@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 06:21:20 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/09 15:03:52 by enanni           ###   ########.fr       */
+/*   Created: 2024/02/09 16:37:38 by enanni            #+#    #+#             */
+/*   Updated: 2024/02/09 19:02:57 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	int	size;
 
-	i = 0;
-	while (s[i])
+	size = 0;
+	while (lst != NULL)
 	{
-		ft_putchar_fd(s[i], fd);
-		i++;
+		size++;
+		lst = lst -> next;
 	}
-	write(fd, "\n", 1);
+	return (size);
 }
 
 /* int	main()
 {
-	int	fd = open("test.txt", O_WRONLY);
-	ft_putendl_fd("Ciao", fd);
-	close(fd);
-	return (0);
+	t_list *head;
+
+	head = ft_lstnew(NULL);
+	head -> next = ft_lstnew(NULL);
+	printf("%d\n", ft_lstsize(head));
+	free(head -> next);
 } */

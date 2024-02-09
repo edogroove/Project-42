@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 11:37:03 by enanni            #+#    #+#              #
-#    Updated: 2024/02/08 21:02:20 by enanni           ###   ########.fr        #
+#    Updated: 2024/02/09 18:23:29 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,9 @@ SRCS =	ft_isalpha.c \
 		ft_putnbr_fd.c
 
 BSRC =	ft_lstnew_bonus.c \
-		ft_lstadd_front_bonus.c
+		ft_lstadd_front_bonus.c \
+		ft_lstsize_bonus.c \
+		ft_lstlast_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRC:.c=.o)
