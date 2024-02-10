@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:37:38 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/09 19:02:57 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/10 07:50:54 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ int	ft_lstsize(t_list *lst)
 	head -> next = ft_lstnew(NULL);
 	printf("%d\n", ft_lstsize(head));
 	free(head -> next);
+	free(head);
 } */

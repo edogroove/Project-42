@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 20:44:19 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/09 19:02:18 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/10 07:34:34 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 /* int	main()
 {
 	t_list	*head = ft_lstnew("ciao");
+
 	printf("%s\n", (char *)head -> content);
+
 	ft_lstadd_front(&head, ft_lstnew("mondo"));
+	
 	printf("%s\t%s\n", (char *)head -> content,
 	(char *)head -> next -> content);
+
 	return (0);
 } */
