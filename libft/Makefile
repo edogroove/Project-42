@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 11:37:03 by enanni            #+#    #+#              #
-#    Updated: 2024/02/12 14:24:24 by enanni           ###   ########.fr        #
+#    Updated: 2024/02/12 17:49:34 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,10 @@ BSRC =	ft_lstnew_bonus.c \
 		ft_lstsize_bonus.c \
 		ft_lstlast_bonus.c \
 		ft_lstadd_back_bonus.c \
-		ft_lstdelone_bonus.c
+		ft_lstdelone_bonus.c \
+		ft_lstiter_bonus.c \
+		ft_lstmap_bonus.c \
+		ft_lstclear_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRC:.c=.o)
