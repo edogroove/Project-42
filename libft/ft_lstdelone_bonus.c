@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 14:23:01 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/12 17:20:29 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/12 20:14:46 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	free(lst);
 }
 
-void	delete_lstcontent(void *p)
+/*  void	delete_lstcontent(void *p)
 {
 	free(p);
 }
 
-/* 	int	main()
+	int	main()
 {
 	int	*data = malloc(sizeof(int));
 	int	*data1 = malloc(sizeof(int));
