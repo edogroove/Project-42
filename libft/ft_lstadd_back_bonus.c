@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 19:32:14 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/10 20:12:56 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/12 13:25:16 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	head = ft_lstnew("head");
 	mid = ft_lstnew("mid");
 	end = ft_lstnew("end");
+	new = ft_lstnew("new");
 
 	head -> next = mid;
 	mid -> next = end;
@@ -46,8 +47,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	
 	ft_lstadd_back(&head, new);
 	
-	while(head -> next != NULL)
+	while(head != NULL)
 	{
-		printf("%p", &head);
+		printf("%s\n", (char *)head -> content);
+		head = head -> next;
 	}
 } */
