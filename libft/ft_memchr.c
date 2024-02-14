@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 10:35:56 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/29 10:59:43 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 20:46:23 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 /* int	main()
 {
-	char	*a;
+	char	*c;
 
-	a = "ciao";
-	printf("%s\n", (char*)ft_memchr(a, 'i', 2));
-	printf("%s\n", (char*)memchr(a, 'i', 2));
+	c = "ciao";
+	printf("%s\n", (char*)ft_memchr(c, 'i', 2));
+	printf("%s\n", (char*)memchr(c, 'i', 2));
 } */

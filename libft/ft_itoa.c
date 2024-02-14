@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 10:50:39 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/02 10:26:42 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 19:03:41 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ char	*ft_itoa(int n)
 /* int	main()
 {
 	char	*res;
-	res = ft_itoa(0);
+	res = ft_itoa(50);
 	printf("%s\n", res);
+	free(res);
 } */

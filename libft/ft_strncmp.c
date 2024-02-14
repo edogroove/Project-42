@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 09:47:10 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/29 14:41:45 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 21:18:15 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
     char    *c;
     char    *d;
 
-    c = "ft";
-    d = "tf";
+    c = "test";
+    d = "test";
     printf("%d\n", ft_strncmp(c, d, 5));
 	printf("%d\n", strncmp(c, d, 5));
 } */

@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:21:28 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/10 19:30:44 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 20:26:29 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,10 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	int		i;
-	int		c;
-
-	c = 0;
-	i = ft_lstsize(lst);
-	while (c < i - 1)
-	{
+	if (!lst)
+		return (NULL);
+	while (lst -> next)
 		lst = lst -> next;
-		c++;
-	}
 	return (lst);
 }
 

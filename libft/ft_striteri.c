@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 11:00:18 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/12 14:46:14 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 21:08:48 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,15 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 }
 
-/* void print_index_and_char(unsigned int index, char *c)
+/* void f(unsigned int index, char *c)
 {
 	printf("Index: %d, Char: %c\n", index, *c);
 }
 
 int main()
 {
-	char str1[] = "Test 555";
-	
-	ft_striteri(str1, print_index_and_char);
+	char *str;
+
+	str = "Test 555";
+	ft_striteri(str, f);
 } */

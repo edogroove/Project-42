@@ -6,11 +6,11 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 09:12:01 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/26 14:54:33 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 21:22:01 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" // NON FUNZIONA
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -30,10 +30,10 @@ char	*ft_strrchr(const char *s, int c)
 
 /* int	main()
 {
-	char s[] = "abbbbbbbb";
-    char c = 'a';
-    char *p;
+	char s[] = "abcde";
+    char c = 'd';
+    char *str;
 
-    p = ft_strrchr(s, c);
-	printf("%s\n", p);
+    str = ft_strrchr(s, c);
+	printf("%s\n", str);
 } */

@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 19:50:59 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/08 18:16:10 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 21:04:59 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ char	**ft_split(char const *s, char c)
 	int		i;
 
 	i = 0;
-	char **split_result = ft_split("hello!", ' ');
+	char **split_result = ft_split("test 555", ' ');
 	while (split_result[i] != NULL)
 	{
 		printf("%s\n", split_result[i]);

@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:37:24 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/25 11:37:26 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 20:50:41 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
     char str1[] = "ciao";
     char str2[] = "zzzz sono edo";
+	
     ft_memmove(str2, str1, 4);
 	printf("%s\n", str2);
+
 	memmove(str2, str1, 4);
     printf("%s\n", str2);
     return 0;

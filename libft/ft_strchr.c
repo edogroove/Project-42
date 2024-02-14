@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 17:11:52 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/26 09:42:28 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 21:05:50 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ char	*ft_strchr(const char *s, int c)
 /* int	main()
 {
 	char s[] = "Ciao, mondo!";
-    char c = 'd';
+    char c = 'n';
     char *p;
 
     p = ft_strchr(s, c);
-	printf("%s", p);
+	printf("%s\n", p);
 } */

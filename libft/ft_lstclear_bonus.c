@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:49:41 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/13 18:00:18 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 20:01:20 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ int	main()
 	printf("%d\n\n", *(int *)(list2 -> content));
 	ft_lstclear(&list1, &del);
 	printf("%d\n", *(int *)(list -> content));
-	printf("%d\n", *(int *)(list2 -> content));
+//	printf("%d\n", *(int *)(list1 -> content)); //segfault OK!
+	free(list);
+	free(data);
 } */

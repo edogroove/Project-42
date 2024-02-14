@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:45:20 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/31 12:35:58 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 21:23:20 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	set = "za";
 	str3 = ft_strtrim(str, set);
 	printf("%s\n", str3);
+	free(str3);
 } */

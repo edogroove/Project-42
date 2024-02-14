@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 07:53:24 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/23 16:07:05 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 21:01:37 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,12 @@ void	*ft_memset(void *s, int c, size_t n)
 }
 /* int main()
 {
-    char str[10];
+    char str[5];
 
     ft_memset(str, 'A', 5);
-    printf("Test case 1: %s\n", str);
+    printf("Test 1: %s\n", str);
 
-    ft_memset(str, 'B', 10);
-    printf("Test case 2: %s\n", str);
-
-    ft_memset(str, '\0', 3);
-    printf("Test case 3: %s\n", str);
-
-    ft_memset(str, 'C', 0);
-    printf("Test case 4: %s\n", str);
-
+    memset(str, 'A', 5);
+    printf("Test 1: %s\n", str);
     return 0;
 } */

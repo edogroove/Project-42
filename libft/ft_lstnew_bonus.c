@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:46:55 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/10 13:25:54 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 20:30:00 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ t_list	*ft_lstnew(void *content)
 
 /* int	main()
 {
-	t_list *elem;
+	t_list *node;
 	char *str = "Test 555";
-	elem = ft_lstnew(str);
-	printf("%s\n", (char *)elem -> content);
-	free(elem);
+	node = ft_lstnew(str);
+	printf("%s\n", (char *)node -> content);
+	free(node);
 	return (0);
 } */

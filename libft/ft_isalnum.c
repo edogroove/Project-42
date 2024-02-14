@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 22:13:02 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/23 06:54:06 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 19:01:34 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_isalnum(int c)
 {
 	char	c;
 
-	c = '0';
+	c = '5';
 	printf("%d\n", ft_isalnum(c));
 	return (0);
 } */

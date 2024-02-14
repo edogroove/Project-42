@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 07:13:43 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/23 18:10:38 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 21:16:09 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ size_t	ft_strlen(const char *s)
 	const char	*s;
 
 	s = "55555";
-	printf("%zu\n", ft_strlen(s));
+	printf("%ld\n", ft_strlen(s));
 	return (0);
 } */

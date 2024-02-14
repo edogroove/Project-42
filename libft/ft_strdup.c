@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 10:13:30 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/30 11:18:04 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 18:32:38 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,6 @@ char	*ft_strdup(const char *s)
 	str = "test";
 	str2 = ft_strdup(str);
 	printf("%s\n", str2);
+	free(str2);
+	return (0);
 } */

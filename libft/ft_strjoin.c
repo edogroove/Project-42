@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:20:19 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/08 16:02:49 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 21:12:15 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str2 = "555";
 	str3 = ft_strjoin(str1, str2);
 	printf("%s\n", str3);
+	free(str3);
 } */

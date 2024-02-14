@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 19:52:31 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/01 20:08:01 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 21:17:32 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,18 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (res);
 }
 
-/* char	f(unsigned int index, char c)
+char	f(unsigned int index, char c)
 {
 	return (c + index);
 }
 
-int	main()
+/* int	main()
 {
 	char const	*str;
 	char		*res;
 
 	str = "aaaaaa";
 	res = ft_strmapi(str, &f);
-	printf("%s", res);
+	printf("%s\n", res);
+	free(res);
 } */

@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:56:47 by enanni            #+#    #+#             */
-/*   Updated: 2024/01/29 23:53:00 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 19:00:23 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,22 @@ void	*ft_calloc(size_t nmeb, size_t size)
 	return (ptr);
 }
 
-/* int	main()
+/* int main()
 {
-	char	*str;
+    int *array;
+    int i;
 
-	str = ft_calloc(3, 3);
-	printf("%s", str);
+	i = 0;
+    array = calloc(5, sizeof(int));
+    if (array == NULL)
+        return (1);
+    printf("Valori:\n");
+    while (i < 5)
+	{
+        printf("%d ", array[i]);
+		i++;
+    }
+    printf("\n");
+    free(array);
+    return 0;
 } */

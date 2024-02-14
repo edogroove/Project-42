@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:32:47 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/12 17:40:43 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/14 20:21:52 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,10 @@ int	main()
 	printf("%d\n", *(int *)(list -> content));
 	printf("%d\n", *(int *)(list1 -> content));
 	printf("%d\n", *(int *)(list2 -> content));
+	free(list);
+	free(data);
+	free(list1);
+	free(data1);
+	free(list2);
+	free(data2);
 } */
