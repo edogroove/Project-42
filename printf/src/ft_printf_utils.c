@@ -6,13 +6,12 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:41:50 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/21 10:15:51 by enanni           ###   ########.fr       */
+/*   Updated: 2024/02/21 11:41:38 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
-#include <stdlib.h>
 
 void	ft_putstr(char *str)
 {
