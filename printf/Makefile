@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/25 11:37:03 by enanni            #+#    #+#              #
-#    Updated: 2024/02/29 14:28:52 by enanni           ###   ########.fr        #
+#    Created: 2024/03/02 10:00:43 by enanni            #+#    #+#              #
+#    Updated: 2024/03/02 10:23:23 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,14 +15,13 @@ CFLAGS = -Wall -Wextra -Werror -I./includes/
 RM = rm -rf
 NAME = libftprintf.a
 
-SRCS =	ft_printf.c srcs/prt_hexa.c srcs/prt_int.c srcs/prt_ptr.c srcs/prt_str.c srcs/prt_unsigned.c
-		
+SRCS = ft_printf.c srcs/prt_hexa.c srcs/prt_int.c srcs/prt_ptr.c srcs/prt_str.c srcs/prt_unsigned.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(MAKE) -C ./libft
+	$(MAKE) bonus -C ./libft
 	cp libft/libft.a $(NAME)
 	ar rc $(NAME) $(OBJS)
 clean:

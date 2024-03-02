@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 11:37:03 by enanni            #+#    #+#              #
-#    Updated: 2024/02/29 14:35:57 by enanni           ###   ########.fr        #
+#    Updated: 2024/03/02 10:28:40 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,10 +59,10 @@ BSRC =	ft_lstnew_bonus.c \
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRC:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror -I../includes/
+CFLAGS = -Wall -Wextra -Werror -I../includes/
 
 $(NAME):
-		cc -c $(FLAGS) $(SRCS)
+		cc -c $(CFLAGS) $(SRCS)
 		ar rc $(NAME) $(OBJS)
 
 bonus:		$(BOBJS) $(OBJS)

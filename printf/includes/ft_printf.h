@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 17:35:48 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/29 14:01:39 by enanni           ###   ########.fr       */
+/*   Created: 2024/03/02 09:43:55 by enanni            #+#    #+#             */
+/*   Updated: 2024/03/02 10:02:30 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <limits.h>
 # include <stdio.h>
+# include <stdbool.h>
 
 int		ft_printf(const char *__format, ...);
 int		prt_str(char const *str);
