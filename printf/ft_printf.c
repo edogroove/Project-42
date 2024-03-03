@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 09:43:23 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/03 10:13:30 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/03 11:07:07 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_formats(char format, va_list args)
 	else if (format == 'c')
 	{
 		ft_putchar_fd(va_arg(args, int), 1);
-		return (0);
+		return (1);
 	}
 	else if (format == 's')
 		return (prt_str(va_arg(args, char *)));
