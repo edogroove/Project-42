@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 10:01:15 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/02 11:15:42 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/03 09:32:40 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,19 @@ int main(void)
 	int				n;
 	unsigned int	u;
 	int				hex;
+	char			c;
 
 	str = "test";
 	n = -10;
 	u = 10;
 	hex = 0x1F4;
+	c = 'c';
+
+	ft_printf("%%c: %c\n", c);
+	printf("%%c: %c\n", c);
+
+	ft_printf("\n\n");
+
 	ft_printf("%%s: %s\n", str);
 	printf("%%s: %s\n", str);
 

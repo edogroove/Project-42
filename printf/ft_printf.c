@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 09:43:23 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/02 11:02:04 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/03 09:33:14 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_formats(char format, va_list args)
 		return (write(1, "%", 1));
 	else if (format == 'c')
 	{
-		ft_putchar_fd(va_arg(args, int), 1);
+		write(1, (char)va_arg(args, char), 1);
 		return (1);
 	}
 	else if (format == 's')
@@ -36,26 +36,26 @@ static int	ft_formats(char format, va_list args)
 	return (0);
 }
 
-int	ft_printf(const char *__format, ...)
+int	ft_printf(const char *format_input, ...)
 {
 	int		i;
 	int		len;
 	va_list	args;
 
-	if (!__format)
+	if (!format_input)
 		return (0);
 	i = 0;
 	len = 0;
-	va_start(args, __format);
-	while (__format[i])
+	va_start(args, format_input);
+	while (format_input[i])
 	{
-		if (__format[i] == '%')
+		if (format_input[i] == '%')
 		{
 			i++;
-			len += ft_formats(__format[i], args);
+			len += ft_formats(format_input[i], args);
 		}
 		else
-			len += write(1, &__format[i], 1);
+			len += write(1, &format_input[i], 1);
 		i++;
 	}
 	va_end(args);
