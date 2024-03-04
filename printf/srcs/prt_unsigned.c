@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 09:59:59 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/02 11:02:43 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/04 23:42:33 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	put_unsigned(unsigned int nbr)
 
 	if (nbr > 9)
 		put_unsigned(nbr / 10);
-	write(STDOUT_FILENO, &digits[nbr % 10], 1);
+	write(1, &digits[nbr % 10], 1);
 }
 
 int	prt_unsigned(unsigned int nbr)
