@@ -6,61 +6,89 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:39:02 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/15 15:54:30 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/15 19:52:34 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_read_str(int fd, char *str)
+static char	*extract(char *line)
 {
-	char	*buff;
-	int		rd_bytes;
+	size_t	count;
+	char	*backup;
 
-	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buff)
-		return (NULL);
-	rd_bytes = 1;
-	while (!ft_strchr(str, '\n') && rd_bytes != 0)
+	count = 0;
+	while (line[count] != '\n' && line[count] != '\0')
+		count++;
+	if (line[count] == '\0' || line[1] == '\0')
+		return (0);
+	backup = ft_substr(line, count + 1, ft_strlen(line) - count);
+	if (*backup == '\0')
 	{
-		rd_bytes = read(fd, buff, BUFFER_SIZE);
-		if (rd_bytes == -1)
-		{
-			free(buff);
-			return (NULL);
-		}
-		buff[rd_bytes] = '\0';
-		str = ft_strjoin(str, buff);
+		free(backup);
+		backup = NULL;
 	}
-	free(buff);
-	return (str);
+	line[count + 1] = '\0';
+	return (backup);
+}
+
+static char	*ft_read(int fd, char *buf, char *backup)
+{
+	int		read_line;
+	char	*char_temp;
+
+	read_line = 1;
+	while (read_line != '\0')
+	{
+		read_line = read(fd, buf, BUFFER_SIZE);
+		if (read_line == -1)
+			return (0);
+		else if (read_line == 0)
+			break ;
+		buf[read_line] = '\0';
+		if (!backup)
+			backup = ft_strdup("");
+		char_temp = backup;
+		backup = ft_strjoin(char_temp, buf);
+		free(char_temp);
+		char_temp = NULL;
+		if (ft_strchr (buf, '\n'))
+			break ;
+	}
+	return (backup);
 }
 
 char	*get_next_line(int fd)
 {
 	char			*line;
-	static char		*str;
+	char			*buf;
+	static char		*backup;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	str = ft_read_str(fd, str);
-	if (!str)
+	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buf)
 		return (NULL);
-	line = get_line(str);
-	str = new_str(str);
+	line = ft_read(fd, buf, backup);
+	free(buf);
+	buf = NULL;
+	if (!line)
+		return (NULL);
+	backup = extract(line);
 	return (line);
 }
 
 /* int		main(void)
 {
-	char	*line;
-	int		fd1;
-	fd1 = open("test.txt", O_RDONLY);
-	line = get_next_line(fd1);
-	printf("line: %s", line);
-	free(line);
-	close(fd1);
-	return (0);
-}
+	int		fd;
+	char	buf[256];
+	int		chars_read;
 
-cc -Wall -Wextra -Werror -D BUFFER_SIZE=100 get_next_line.c get_next_line_utils.c */
+	fd = open("test.txt", O_RDONLY);
+	while ((chars_read = read(fd, buf, BUFFER_SIZE)))
+	{
+		buf[chars_read] = '\0';
+		printf("line: %s\n", buf);
+	}
+}
+ */

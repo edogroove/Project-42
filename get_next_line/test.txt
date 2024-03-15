@@ -1,0 +1,6 @@
+Il sistema numerico binario ha molti padri.
+Il primo a proporne l'uso fu Juan Caramuel con la pubblicazione del volume Mathesis biceps.
+Vetus, et noua, pubblicato a Campagna nel 1669. Se ne trova traccia anche nelle opere di Nepero.
+
+I numeri binari possono essere messi in relazione tramite operazioni aritmetiche, 
+con regole simili a quelle del sistema decimale.
