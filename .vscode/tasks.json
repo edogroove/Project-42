@@ -7,8 +7,14 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
+				"-Wall",
+				"-Wextra",
+				"-Werror",
+				"-D BUFFER_SIZE=5",
 				"${file}",
-				"libftprintf.a",
+				"get_next_line_utils.c",
+				"get_next_line.h",
+//				"libftprintf.a",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}"
 			],

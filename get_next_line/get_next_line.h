@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:39:47 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/15 19:26:04 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/18 08:22:07 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 5
 # endif
 
 # include <stdlib.h>

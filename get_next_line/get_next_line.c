@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:39:02 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/15 19:52:34 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/18 07:56:54 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,16 @@ char	*get_next_line(int fd)
 
 /* int		main(void)
 {
+	char	*line;
 	int		fd;
-	char	buf[256];
-	int		chars_read;
-
+	
 	fd = open("test.txt", O_RDONLY);
-	while ((chars_read = read(fd, buf, BUFFER_SIZE)))
+	while ((line = get_next_line(fd)) != NULL)
 	{
-		buf[chars_read] = '\0';
-		printf("line: %s\n", buf);
+		printf("%s\n", line);
+		free(line);
 	}
+	close(fd);
+	return (0);
 }
  */
