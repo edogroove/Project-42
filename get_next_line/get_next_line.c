@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:39:02 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/20 18:44:03 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/20 18:45:31 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	*get_next_line(int fd)
 	fd = open("test.txt", O_RDONLY);
 	while ((line = get_next_line(fd)) != NULL)
 	{
-		printf("%s\n", line);
+		printf("line: %s", line);
 		free(line);
 	}
 	printf("\n");
