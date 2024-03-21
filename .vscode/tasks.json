@@ -10,7 +10,7 @@
 				"-Wall",
 				"-Wextra",
 				"-Werror",
-				"-D BUFFER_SIZE=5",
+//				"-D BUFFER_SIZE=5",
 				"${file}",
 				"get_next_line_utils.c",
 				"get_next_line.h",

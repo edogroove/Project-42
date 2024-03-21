@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:39:02 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/21 17:26:12 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/21 18:05:17 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,35 +62,40 @@ char	*get_next_line(int fd)
 {
 	char			*line;
 	char			*buf;
-	static char		*backup;
+	static char		*backup[1024];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
 		return (NULL);
-	line = ft_read(fd, buf, backup);
+	line = ft_read(fd, buf, backup[fd]);
 	free(buf);
 	buf = NULL;
 	if (!line)
 		return (NULL);
-	backup = extract(line);
+	backup[fd] = extract(line);
 	return (line);
 }
 
-/* int		main(void)
+int		main(void)
 {
 	char	*line;
+	char	*line2;
 	int		fd;
+	int		fd2;
 	
 	fd = open("test.txt", O_RDONLY);
-	while ((line = get_next_line(fd)) != NULL)
+	fd2 = open("read_error.txt", O_RDONLY);
+	while (((line = get_next_line(fd)) != NULL) &&
+	(line2 = get_next_line(fd2)) != NULL)
 	{
-		printf("line: %s", line);
+		printf("%s", line);
 		free(line);
+		printf("%s", line2);
+		free(line2);
 	}
-	printf("\n");
 	close(fd);
+	close(fd2);
 	return (0);
 }
- */
