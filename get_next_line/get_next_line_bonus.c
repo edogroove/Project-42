@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:39:02 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/21 18:05:17 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/22 08:31:41 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-int		main(void)
+/* int		main(void)
 {
 	char	*line;
 	char	*line2;
@@ -99,3 +99,4 @@ int		main(void)
 	close(fd2);
 	return (0);
 }
+ */
