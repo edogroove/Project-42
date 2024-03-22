@@ -6,13 +6,13 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:39:02 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/21 17:26:12 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/22 09:12:12 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*extract(char *line)
+static char	*cut(char *line)
 {
 	size_t	count;
 	char	*backup;
@@ -32,10 +32,10 @@ static char	*extract(char *line)
 	return (backup);
 }
 
-static char	*ft_read(int fd, char *buf, char *backup)
+static char	*ft_read_line(int fd, char *buf, char *backup)
 {
 	int		read_line;
-	char	*char_temp;
+	char	*temp;
 
 	read_line = 1;
 	while (read_line != '\0')
@@ -48,10 +48,10 @@ static char	*ft_read(int fd, char *buf, char *backup)
 		buf[read_line] = '\0';
 		if (!backup)
 			backup = ft_strdup("");
-		char_temp = backup;
-		backup = ft_strjoin(char_temp, buf);
-		free(char_temp);
-		char_temp = NULL;
+		temp = backup;
+		backup = ft_strjoin(temp, buf);
+		free(temp);
+		temp = NULL;
 		if (ft_strchr (buf, '\n'))
 			break ;
 	}
@@ -69,12 +69,12 @@ char	*get_next_line(int fd)
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
 		return (NULL);
-	line = ft_read(fd, buf, backup);
+	line = ft_read_line(fd, buf, backup);
 	free(buf);
 	buf = NULL;
 	if (!line)
 		return (NULL);
-	backup = extract(line);
+	backup = cut(line);
 	return (line);
 }
 
@@ -89,7 +89,6 @@ char	*get_next_line(int fd)
 		printf("line: %s", line);
 		free(line);
 	}
-	printf("\n");
 	close(fd);
 	return (0);
 }
