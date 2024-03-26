@@ -1,53 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prt_int.c                                          :+:      :+:    :+:   */
+/*   prt_ptr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/02 09:58:35 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/04 23:35:11 by enanni           ###   ########.fr       */
+/*   Created: 2024/03/02 09:59:03 by enanni            #+#    #+#             */
+/*   Updated: 2024/03/26 10:48:47 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static size_t	i_digits(int n)
+static size_t	p_digits(unsigned long long n)
 {
 	size_t	digits;
 
 	digits = 0;
-	if (n <= 0)
-		digits += 1;
+	if (n == 0)
+		return (1);
 	while (n != 0)
 	{
-		n /= 10;
 		digits += 1;
+		n /= 16;
 	}
 	return (digits);
 }
 
-static void	put_int(int n)
+static void	put_ptr(unsigned long long addr)
 {
-	static char	digits[] = "0123456789";
+	static char	digits[] = "0123456789abcdef";
 
-	if (n > 9)
-		put_int(n / 10);
-	write(1, &digits[n % 10], 1);
+	if (addr >= 16)
+		put_ptr(addr / 16);
+	write(1, &digits[addr % 16], 1);
 }
 
-int	prt_int(int n)
+int	ft_ptr(void *addr)
 {
-	int	len;
-
-	if (n == INT_MIN)
-		return ((write(1, "-2147483648", 11)));
-	len = i_digits(n);
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n *= -1;
-	}
-	put_int(n);
-	return (len);
+	if (addr == NULL)
+		return (write(1, "(nil)", 5));
+	write(1, "0x", 2);
+	put_ptr((unsigned long long)addr);
+	return (p_digits((unsigned long long)addr) + 2);
 }

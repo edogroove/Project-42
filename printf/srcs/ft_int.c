@@ -1,47 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prt_hexa.c                                         :+:      :+:    :+:   */
+/*   prt_int.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/02 09:58:07 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/04 23:42:53 by enanni           ###   ########.fr       */
+/*   Created: 2024/03/02 09:58:35 by enanni            #+#    #+#             */
+/*   Updated: 2024/03/26 10:48:35 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static size_t	h_digits(unsigned int n)
+static size_t	i_digits(int n)
 {
 	size_t	digits;
 
 	digits = 0;
-	if (n == 0)
-		return (1);
+	if (n <= 0)
+		digits += 1;
 	while (n != 0)
 	{
+		n /= 10;
 		digits += 1;
-		n /= 16;
 	}
 	return (digits);
 }
 
-static void	put_hexa(unsigned int nbr, bool upper_case)
+static void	put_int(int n)
 {
-	static char	upper_digits[] = "0123456789ABCDEF";
-	static char	lower_digits[] = "0123456789abcdef";
+	static char	digits[] = "0123456789";
 
-	if (nbr >= 16)
-		put_hexa((nbr / 16), upper_case);
-	if (upper_case == true)
-		write(1, &upper_digits[nbr % 16], 1);
-	else
-		write(1, &lower_digits[nbr % 16], 1);
+	if (n > 9)
+		put_int(n / 10);
+	write(1, &digits[n % 10], 1);
 }
 
-int	prt_hexa(unsigned int nbr, bool upper_case)
+int	ft_int(int n)
 {
-	put_hexa(nbr, upper_case);
-	return (h_digits(nbr));
+	int	len;
+
+	if (n == INT_MIN)
+		return ((write(1, "-2147483648", 11)));
+	len = i_digits(n);
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n *= -1;
+	}
+	put_int(n);
+	return (len);
 }

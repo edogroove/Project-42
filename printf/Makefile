@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 10:00:43 by enanni            #+#    #+#              #
-#    Updated: 2024/03/02 10:23:23 by enanni           ###   ########.fr        #
+#    Updated: 2024/03/26 10:46:40 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS = -Wall -Wextra -Werror -I./includes/
 RM = rm -rf
 NAME = libftprintf.a
 
-SRCS = ft_printf.c srcs/prt_hexa.c srcs/prt_int.c srcs/prt_ptr.c srcs/prt_str.c srcs/prt_unsigned.c
+SRCS = ft_printf.c srcs/ft_hexa.c srcs/ft_int.c srcs/ft_ptr.c srcs/ft_str.c srcs/ft_unsigned.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

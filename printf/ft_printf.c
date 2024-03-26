@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 09:43:23 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/03 11:07:07 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/26 10:45:52 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ static int	ft_formats(char format, va_list args)
 		return (1);
 	}
 	else if (format == 's')
-		return (prt_str(va_arg(args, char *)));
+		return (ft_str(va_arg(args, char *)));
 	else if (format == 'p')
-		return (prt_ptr(va_arg(args, void *)));
+		return (ft_ptr(va_arg(args, void *)));
 	else if (format == 'd' || format == 'i')
-		return (prt_int(va_arg(args, int)));
+		return (ft_int(va_arg(args, int)));
 	else if (format == 'u')
-		return (prt_unsigned(va_arg(args, unsigned int)));
+		return (ft_unsigned(va_arg(args, unsigned int)));
 	else if (format == 'x')
-		return (prt_hexa(va_arg(args, ssize_t), false));
+		return (ft_hexa(va_arg(args, ssize_t), false));
 	else if (format == 'X')
-		return (prt_hexa(va_arg(args, ssize_t), true));
+		return (ft_hexa(va_arg(args, ssize_t), true));
 	return (0);
 }
 

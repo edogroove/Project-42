@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prt_ptr.c                                          :+:      :+:    :+:   */
+/*   prt_hexa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/02 09:59:03 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/04 23:25:10 by enanni           ###   ########.fr       */
+/*   Created: 2024/03/02 09:58:07 by enanni            #+#    #+#             */
+/*   Updated: 2024/03/26 10:48:17 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static size_t	p_digits(unsigned long long n)
+static size_t	h_digits(unsigned int n)
 {
 	size_t	digits;
 
@@ -27,20 +27,21 @@ static size_t	p_digits(unsigned long long n)
 	return (digits);
 }
 
-static void	put_ptr(unsigned long long addr)
+static void	put_hexa(unsigned int nbr, bool upper_case)
 {
-	static char	digits[] = "0123456789abcdef";
+	static char	upper_digits[] = "0123456789ABCDEF";
+	static char	lower_digits[] = "0123456789abcdef";
 
-	if (addr >= 16)
-		put_ptr(addr / 16);
-	write(1, &digits[addr % 16], 1);
+	if (nbr >= 16)
+		put_hexa((nbr / 16), upper_case);
+	if (upper_case == true)
+		write(1, &upper_digits[nbr % 16], 1);
+	else
+		write(1, &lower_digits[nbr % 16], 1);
 }
 
-int	prt_ptr(void *addr)
+int	ft_hexa(unsigned int nbr, bool upper_case)
 {
-	if (addr == NULL)
-		return (write(1, "(nil)", 5));
-	write(1, "0x", 2);
-	put_ptr((unsigned long long)addr);
-	return (p_digits((unsigned long long)addr) + 2);
+	put_hexa(nbr, upper_case);
+	return (h_digits(nbr));
 }
