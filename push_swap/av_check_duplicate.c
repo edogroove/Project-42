@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   av_check_duplicate.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmarmugi <nmarmugi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 11:36:34 by nmarmugi          #+#    #+#             */
-/*   Updated: 2024/03/27 13:38:02 by nmarmugi         ###   ########.fr       */
+/*   Updated: 2024/03/28 17:32:43 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,66 @@ int	have_duplicates(char **av)
 		}
 		i++;
 	}
+	return (0);
+}
+
+int	have_duplicates_arr(char **av)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (av[i])
+	{
+		j = 0;
+		while (av[j])
+		{
+			if (j != i && str_cmp(av[i], av[j]) == 0)
+			{
+				write (2, "Error\n", 6);
+				return (1);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+int	arg_is_zero(char *av)
+{
+	int	i;
+
+	i = 0;
+	if (ft_isoperator(av[i]))
+		i++;
+	while ((av[i] && av[i] == '0')
+		|| ((av[i] && av[i] == '0') || (av[i] == ' ')
+			|| (ft_isoperator(av[i]) == 1)))
+		i++;
+	if (av[i] == '\0')
+		return (1);
+	return (0);
+}
+
+int	is_correct_zero(char **av)
+{
+	int	i;
+	int	nb_zeros;
+
+	nb_zeros = 0;
+	i = 1;
+	while (av[i])
+	{
+		nb_zeros += arg_is_zero(av[i]);
+		i++;
+	}
+	if (nb_zeros > 1)
+	{
+		write (2, "Error\n", 6);
+		return (1);
+	}
+	if (have_duplicates(av) == 1)
+		return (1);
 	return (0);
 }

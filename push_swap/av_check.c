@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 18:09:25 by nmarmugi          #+#    #+#             */
-/*   Updated: 2024/03/27 16:46:29 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:00:22 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,14 @@ char	**av_one_arg(char **av)
 	while (av[1][i])
 	{
 		if (ft_isoperator(av[1][i]) == 1)
+		{
+			i++;
+			if (ft_isdigit(av[1][i]) == 0)
 			{
-				i++;
-				if (ft_isdigit(av[1][i]) == 0)
-				{
-					write (2, "Error\n", 6);
-					return (NULL);
-				}
+				write (2, "Error\n", 6);
+				return (NULL);
 			}
+		}
 		if ((ft_isdigit(av[1][i]) == 0) && (av[1][i] != 32))
 		{
 			write (2, "Error\n", 6);
