@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 18:10:28 by nmarmugi          #+#    #+#             */
-/*   Updated: 2024/03/28 17:32:59 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/28 18:15:41 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "./libft/libft.h"
+# include <limits.h>
 
 typedef struct stack
 {

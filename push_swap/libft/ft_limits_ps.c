@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   av_check_utils.c                                   :+:      :+:    :+:   */
+/*   ft_limits_ps.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 17:29:50 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/28 18:57:39 by enanni           ###   ########.fr       */
+/*   Created: 2024/03/28 19:21:48 by enanni            #+#    #+#             */
+/*   Updated: 2024/03/28 19:50:54 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	is_correct_zero_arr(char **av)
+void	ft_limits_ps(long long n, int sign)
 {
-	int	i;
-	int	nb_zeros;
-
-	nb_zeros = 0;
-	i = 0;
-	while (av[i])
+	if (sign == 1)
 	{
-		nb_zeros += arg_is_zero(av[i]);
-		i++;
+		if (n > INT_MAX)
+		{
+			write (2, "Error\n", 6);
+			exit (1);
+		}
 	}
-	if (nb_zeros > 1)
+	if (sign == -1)
 	{
-		write (2, "Error\n", 6);
-		return (1);
+		if (n < INT_MIN)
+		{
+			write (2, "Error\n", 6);
+			exit (1);
+		}
 	}
-	if (have_duplicates_arr(av) == 1)
-		return (1);
-	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 11:37:03 by enanni            #+#    #+#              #
-#    Updated: 2024/03/26 13:07:28 by enanni           ###   ########.fr        #
+#    Updated: 2024/03/28 19:30:34 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,9 @@ SRCS =	ft_isalpha.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-		ft_isoperator.c
+		ft_isoperator.c \
+		ft_atoi_ps.c \
+		ft_limits_ps.c
 
 BSRC =	ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \

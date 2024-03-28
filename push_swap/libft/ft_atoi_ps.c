@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   av_check_utils.c                                   :+:      :+:    :+:   */
+/*   ft_atoi_ps.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 17:29:50 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/28 18:57:39 by enanni           ###   ########.fr       */
+/*   Created: 2024/03/28 17:46:52 by enanni            #+#    #+#             */
+/*   Updated: 2024/03/28 19:49:44 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	is_correct_zero_arr(char **av)
+int	ft_atoi_ps(const char *str)
 {
-	int	i;
-	int	nb_zeros;
+	int			sign;
+	long long	res;
 
-	nb_zeros = 0;
-	i = 0;
-	while (av[i])
+	sign = 1;
+	res = 0;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		nb_zeros += arg_is_zero(av[i]);
-		i++;
+		if (*str == '-')
+			sign *= -1;
+		str++;
 	}
-	if (nb_zeros > 1)
+	while (*str >= '0' && *str <= '9')
 	{
-		write (2, "Error\n", 6);
-		return (1);
+		res = res * 10 + (*str - '0');
+		str++;
 	}
-	if (have_duplicates_arr(av) == 1)
-		return (1);
-	return (0);
+	ft_limits_ps(res, sign);
+	return ((int)res * sign);
 }

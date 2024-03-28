@@ -9,6 +9,7 @@
                 "-g",
                 "${file}",
 				"av_check.c",
+				"av_check_utils.c",
 				"push_swap",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"

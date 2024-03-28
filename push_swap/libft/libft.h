@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:36:55 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/26 13:06:56 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/28 19:51:10 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <fcntl.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -70,5 +71,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_isoperator(int c);
+int		ft_atoi_ps(const char *str);
+void	ft_limits_ps(long long n, int sign);
 
 #endif
