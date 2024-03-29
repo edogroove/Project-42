@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   av_check_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
+/*   By: nmarmugi <nmarmugi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 17:29:50 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/28 18:57:39 by enanni           ###   ########.fr       */
+/*   Created: 2024/03/28 20:04:16 by nmarmugi          #+#    #+#             */
+/*   Updated: 2024/03/29 14:12:00 by nmarmugi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,19 @@ int	is_correct_zero_arr(char **av)
 	if (have_duplicates_arr(av) == 1)
 		return (1);
 	return (0);
+}
+
+void	free_string_array(char **array)
+{
+	int	j;
+
+	j = 0;
+	if (array == NULL)
+		return ;
+	while (array[j])
+	{
+		free(array[j]);
+		j++;
+	}
+	free(array);
 }

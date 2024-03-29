@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 18:10:28 by nmarmugi          #+#    #+#             */
-/*   Updated: 2024/03/28 18:15:41 by enanni           ###   ########.fr       */
+/*   Updated: 2024/03/29 16:50:36 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int		have_duplicates_arr(char **av);
 int		is_correct_zero(char **av);
 int		is_correct_zero_arr(char **av);
 int		arg_is_zero(char *av);
+void	free_string_array(char **array);
 
 #endif
