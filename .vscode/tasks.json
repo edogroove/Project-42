@@ -13,10 +13,12 @@
 				"-D BUFFER_SIZE=5",
 				"${file}",
 				"get_next_line_utils.c",
-				"get_next_line.h",
 //				"libftprintf.a",
 				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}"
+				"${fileDirname}/${fileBasenameNoExtension}",
+				"-Wall",
+				"-Wextra",
+				"-Werror"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
