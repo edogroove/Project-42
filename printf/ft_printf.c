@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 09:43:23 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/26 10:45:52 by enanni           ###   ########.fr       */
+/*   Updated: 2024/04/04 10:24:45 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,59 @@ int	ft_printf(const char *format_input, ...)
 	va_end(args);
 	return (len);
 }
+
+/* int	main(void)
+{
+	char			*str;
+	int				n;
+	unsigned int	u;
+	int				hex;
+	char			c;
+
+	c = 'c';
+	str = "test";
+	n = -2147483648;
+	u = 10;
+	hex = 1000;
+
+	ft_printf("%%c: %c\n", c);
+	printf("%%c: %c\n", c);
+
+	ft_printf("\n\n");
+
+	ft_printf("%%s: %s\n", str);
+	printf("%%s: %s\n", str);
+
+	ft_printf("\n\n");
+
+	ft_printf("%%p: %p\n", str);
+	printf("%%p: %p\n", str);
+
+	ft_printf("\n\n");
+
+	ft_printf("%%d: %d\n", n);
+	printf("%%d: %d\n", n);
+
+	ft_printf("\n\n");
+
+	ft_printf("%%i: %i\n", n);
+	printf("%%i: %i\n", n);
+
+	ft_printf("\n\n");
+
+	ft_printf("%%u: %u\n", u);
+	printf("%%u: %u\n", u);
+
+	ft_printf("\n\n");
+
+	ft_printf("%%x: %x\n", hex);
+	printf("%%x: %x\n", hex);
+
+	ft_printf("\n\n");
+
+	ft_printf("%%X: %X\n", hex);
+	printf("%%X: %X\n", hex);
+
+	return (0);
+}
+  */
