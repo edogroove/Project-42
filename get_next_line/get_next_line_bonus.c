@@ -6,11 +6,11 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:39:02 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/05 06:55:12 by enanni           ###   ########.fr       */
+/*   Updated: 2024/04/05 19:13:06 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*cut(char *line)
 {
@@ -99,4 +99,4 @@ char	*get_next_line(int fd)
 	close(fd2);
 	return (0);
 }
-  */
+ */
