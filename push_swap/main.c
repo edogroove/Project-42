@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 20:03:59 by nmarmugi          #+#    #+#             */
-/*   Updated: 2024/03/29 17:32:40 by enanni           ###   ########.fr       */
+/*   Created: 2024/04/15 18:18:45 by enanni            #+#    #+#             */
+/*   Updated: 2024/04/15 18:18:51 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(int ac, char **av)
 {
-	int			j;
-	char		**result;
-	int	number;
+	int		j;
+	char	**result;
+	int		number;
 
 	if (ac == 2)
 	{
@@ -41,10 +41,10 @@ int	main(int ac, char **av)
 		{
 			number = ft_atoi_ps(result[j]);
 			if (ft_atoi_ps(result[j]) == 1)
-				{
-					free_string_array(result);
-					ft_display_exit_ps();
-				}
+			{
+				free_string_array(result);
+				ft_display_exit_ps();
+			}
 			j++;
 		}
 		j = 0;

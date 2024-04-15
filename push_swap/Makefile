@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nmarmugi <nmarmugi@student.42.fr>          +#+  +:+       +#+         #
+#    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/28 20:03:52 by nmarmugi          #+#    #+#              #
-#    Updated: 2024/03/28 20:03:54 by nmarmugi         ###   ########.fr        #
+#    Created: 2024/04/15 18:35:25 by enanni            #+#    #+#              #
+#    Updated: 2024/04/15 18:35:30 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 20:01:22 by nmarmugi          #+#    #+#             */
-/*   Updated: 2024/03/29 17:17:34 by enanni           ###   ########.fr       */
+/*   Created: 2024/04/15 18:34:54 by enanni            #+#    #+#             */
+/*   Updated: 2024/04/15 18:34:57 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int	ft_atoi_ps(const char *str)
 	}
 	res *= sign;
 	if (res > 2147483647 || res < -2147483648)
-		return (1);
+		return(1);
 	return ((int)res);
 }
