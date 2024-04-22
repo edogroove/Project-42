@@ -13,7 +13,7 @@
 //				"-D BUFFER_SIZE=5",
 				"${file}",
 //				"get_next_line_utils.c",
-//				"libftprintf.a",
+				"libftprintf.a",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}"
 			],

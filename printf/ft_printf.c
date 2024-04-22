@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 09:43:23 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/04 15:35:47 by enanni           ###   ########.fr       */
+/*   Updated: 2024/04/22 16:18:01 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,10 @@ int	ft_printf(const char *format_input, ...)
 	printf("N:%d\n", ft_printf("%%X: %X\n", hex));
 	printf("N:%d\n", printf("%%X: %X\n", hex));
 
+	ft_printf("\n\n");
+
+	printf("N: %d\n", ft_printf("%%d: %d, %%s: %s\n", n, str));
+	printf("N: %d\n", printf("%%d: %d, %%s: %s\n", n, str));
 	return (0);
 }
-  */
+ */
