@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:34:44 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/15 18:34:47 by enanni           ###   ########.fr       */
+/*   Updated: 2024/04/23 23:22:33 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,7 @@ int	arg_is_zero(char *av)
 	i = 0;
 	if (ft_isoperator(av[i]))
 		i++;
-	while ((av[i] && av[i] == '0')
-		|| ((av[i] && av[i] == '0') || (av[i] == ' ')
+	while (((av[i] && av[i] == '0') || (av[i] == ' ')
 			|| (ft_isoperator(av[i]) == 1)))
 		i++;
 	if (av[i] == '\0')

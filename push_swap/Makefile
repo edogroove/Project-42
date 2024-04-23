@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 18:35:25 by enanni            #+#    #+#              #
-#    Updated: 2024/04/23 19:03:49 by enanni           ###   ########.fr        #
+#    Updated: 2024/04/23 21:45:49 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ LIBFTNAME = libft.a
 SRCS =	av_check.c \
 		main.c \
 		av_check_duplicate.c \
-		av_check_utils.c
+		av_check_utils.c \
+		initial_checks.c
 		
 OBJS = $(SRCS:.c=.o)
 
