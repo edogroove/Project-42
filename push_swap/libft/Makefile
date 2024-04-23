@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 11:37:03 by enanni            #+#    #+#              #
-#    Updated: 2024/04/15 18:24:19 by enanni           ###   ########.fr        #
+#    Updated: 2024/04/23 19:03:58 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ BSRC =	ft_lstnew_bonus.c \
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRC:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -g -Wall -Wextra -Werror
 
 $(NAME):
 		cc -c $(FLAGS) $(SRCS)
@@ -82,3 +82,5 @@ fclean:		clean
 re:			fclean all
 
 .PHONY:		all clean fclean re bonus
+
+.SILENT:

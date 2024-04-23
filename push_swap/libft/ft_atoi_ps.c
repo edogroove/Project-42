@@ -6,13 +6,13 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:34:54 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/15 18:34:57 by enanni           ###   ########.fr       */
+/*   Updated: 2024/04/23 19:29:56 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi_ps(const char *str)
+long int	ft_atoi_ps(const char *str)
 {
 	int			sign;
 	long int	res;
@@ -33,7 +33,5 @@ int	ft_atoi_ps(const char *str)
 		str++;
 	}
 	res *= sign;
-	if (res > 2147483647 || res < -2147483648)
-		return(1);
-	return ((int)res);
+	return (res);
 }
