@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:36:55 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/23 19:30:57 by enanni           ###   ########.fr       */
+/*   Updated: 2024/04/24 17:00:23 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void		ft_lstclear(t_list **lst, void (*del)(void*));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int			ft_isoperator(int c);
 long int	ft_atoi_ps(const char *str);
-void		ft_limits_ps(long long n, int sign);
 void		ft_display_exit_ps(void);
 
 #endif
