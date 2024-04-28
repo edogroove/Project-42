@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 21:02:22 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/23 23:19:09 by enanni           ###   ########.fr       */
+/*   Updated: 2024/04/24 23:06:24 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,19 @@ int	initial_checks_2(char **av)
 		j++;
 	}
 	return (0);
+}
+
+void	check_duplicates_numbers(int ac, char **av)
+{
+	int	*numbers;
+	int	i;
+
+	i = 0;
+	numbers = (int *)malloc(sizeof(int) * (ac - 1));
+	if (numbers == NULL)
+		return (NULL);
+	while(numbers[i])
+	{
+		
+	}
 }
