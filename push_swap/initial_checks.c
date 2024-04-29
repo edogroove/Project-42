@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 21:02:22 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/24 23:06:24 by enanni           ###   ########.fr       */
+/*   Updated: 2024/04/29 18:09:42 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	initial_checks_2(char **av)
 	return (0);
 }
 
-void	check_duplicates_numbers(int ac, char **av)
+/* int	*check_duplicates_numbers(int ac, char *av)
 {
 	int	*numbers;
 	int	i;
@@ -83,6 +83,9 @@ void	check_duplicates_numbers(int ac, char **av)
 		return (NULL);
 	while(numbers[i])
 	{
-		
+		numbers[i] = ft_atoi_ps(av[i]);
+		i++;
 	}
+	return(numbers);
 }
+ */
