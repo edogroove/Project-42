@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:34:44 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/29 17:24:02 by enanni           ###   ########.fr       */
+/*   Updated: 2024/04/30 16:34:23 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,19 @@ static int	str_cmp(const char *s1, const char *s2)
 	int	j;
 
 	i = 0;
-	j = i;
+	j = 0;
+	while (s1[i] == '0')
+		i++;
+	while (s2[j] == '0')
+		j++;
 	if (s1[i] == '+')
 	{
 		if (s2[j] != '+')
 			i++;
 	}
 	else
-	{
 		if (s2[j] == '+')
 			j++;
-	}
 	while (s1[i] != '\0' && s2[j] != '\0' && s1[i] == s2[j])
 	{
 		i++;

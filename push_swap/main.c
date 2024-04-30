@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:18:45 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/24 22:22:55 by enanni           ###   ########.fr       */
+/*   Updated: 2024/04/30 16:02:59 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ int	main(int ac, char **av)
 	}
 	if (ac > 2)
 	{
-		j = 2;
+		j = 1;
 		initial_checks_2(av);
-		while (result[j])
+		while (av[j])
 		{
-			number = ft_atoi_ps(result[j]);
+			number = ft_atoi_ps(av[j]);
 			printf("%ld\n", number);
 			j++;
 		}
