@@ -6,14 +6,12 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 18:35:25 by enanni            #+#    #+#              #
-#    Updated: 2024/04/23 21:45:49 by enanni           ###   ########.fr        #
+#    Updated: 2024/04/30 18:04:14 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-
 LIBFTPATH = ./libft
-
 LIBFTNAME = libft.a
 
 SRCS =	av_check.c \
@@ -21,26 +19,34 @@ SRCS =	av_check.c \
 		av_check_duplicate.c \
 		av_check_utils.c \
 		initial_checks.c
-		
-OBJS = $(SRCS:.c=.o)
+
+OBJDIR = checks
+
+OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 FLAGS = -g -Wall -Wextra -Werror
 
-$(NAME):
-		make -C $(LIBFTPATH)
-		cp ./libft/libft.a .
-		mv libft.a $(NAME)
-		cc -c $(FLAGS) $(SRCS)
-		ar rc $(NAME) $(OBJS)
+$(OBJDIR)/%.o: %.c
+	cc -c $(FLAGS) $< -o $@
 
-all:		$(NAME)
+$(NAME): $(OBJS)
+	make -C $(LIBFTPATH)
+	cp ./libft/libft.a .
+	mv libft.a $(NAME)
+	ar rc $(NAME) $(OBJS)
+
+all: $(NAME)
+
 clean:
-			rm -f $(OBJS)
-			make -C $(LIBFTPATH) clean
-fclean:		clean
-			rm -f $(NAME)
-			make -C $(LIBFTPATH) fclean
-re:			fclean all
-.PHONY:		all clean fclean re
+	rm -f $(OBJS)
+	make -C $(LIBFTPATH) clean
+
+fclean: clean
+	rm -f $(NAME)
+	make -C $(LIBFTPATH) fclean
+
+re: fclean all
+
+.PHONY: all clean fclean re
 
 .SILENT:
