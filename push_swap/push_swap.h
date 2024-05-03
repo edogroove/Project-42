@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:30:12 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/23 23:24:26 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/03 17:29:19 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,6 @@
 
 # include "./libft/libft.h"
 # include <limits.h>
-
-typedef struct stack
-{
-	int				value;
-	struct stack	*next;
-	struct stack	*prev;
-}	t_stackNode;
 
 int		main(int ac, char **av);
 char	**av_one_arg(char **av);
@@ -35,5 +28,6 @@ void	free_string_array(char **array);
 int		initial_checks(char	**result);
 int		initial_checks_2(char **av);
 void	check_limits(char **result);
+int		all_checks(int ac, char **av);
 
 #endif

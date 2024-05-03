@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:18:45 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/30 16:02:59 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/03 17:30:01 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,13 @@
 
 int	main(int ac, char **av)
 {
-	int			j;
-	char		**result;
-	long int	number;
+	t_list **stack_a;
+	t_list **stack_b;
 
-	if (ac == 2)
-	{
-		j = 0;
-		result = av_one_arg(av);
-		if (initial_checks(result) == 1)
-			return (0);
-		check_limits(result);
-		while (result[j])
-		{
-			number = ft_atoi_ps(result[j]);
-			printf("%ld\n", number);
-			j++;
-		}
-		free_string_array(result);
-	}
-	if (ac > 2)
-	{
-		j = 1;
-		initial_checks_2(av);
-		while (av[j])
-		{
-			number = ft_atoi_ps(av[j]);
-			printf("%ld\n", number);
-			j++;
-		}
-	}
+	all_checks(ac, av);
+	stack_a = (t_list **)malloc(sizeof(t_list));
+	stack_b = (t_list **)malloc(sizeof(t_list));
+	*stack_b = NULL;
+
 	return (0);
 }

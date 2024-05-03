@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 18:35:25 by enanni            #+#    #+#              #
-#    Updated: 2024/04/30 18:04:14 by enanni           ###   ########.fr        #
+#    Updated: 2024/05/03 15:53:01 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCS =	av_check.c \
 		main.c \
 		av_check_duplicate.c \
 		av_check_utils.c \
-		initial_checks.c
+		initial_checks.c \
+		all_checks.c
 
 OBJDIR = checks
 
@@ -30,7 +31,7 @@ $(OBJDIR)/%.o: %.c
 	cc -c $(FLAGS) $< -o $@
 
 $(NAME): $(OBJS)
-	make -C $(LIBFTPATH)
+	make bonus -C $(LIBFTPATH)
 	cp ./libft/libft.a .
 	mv libft.a $(NAME)
 	ar rc $(NAME) $(OBJS)
@@ -48,5 +49,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
-.SILENT:

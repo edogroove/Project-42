@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:36:55 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/24 17:00:23 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/03 17:04:03 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@
 typedef struct s_list
 {
 	void			*content;
+	int				index;
 	struct s_list	*next;
+	struct s_list	*prev;
 }					t_list;
 
 int			ft_isalpha(int c);
