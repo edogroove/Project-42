@@ -6,11 +6,11 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 19:32:14 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/07 12:46:06 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/07 15:47:00 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

@@ -6,11 +6,11 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:34:35 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/30 17:55:44 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/07 15:44:15 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 int	is_correct_zero_arr(char **av)
 {

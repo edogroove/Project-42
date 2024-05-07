@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 18:35:25 by enanni            #+#    #+#              #
-#    Updated: 2024/05/07 13:20:15 by enanni           ###   ########.fr        #
+#    Updated: 2024/05/07 17:53:18 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ NAME = push_swap
 
 LIBFTPATH = ./libft
 LIBFTNAME = libft.a
+FLAGS = -g -Wall -Wextra -Werror -I./includes/
+CC = gcc
 
 CHECKS =	av_check.c \
 			av_check_duplicate.c \
@@ -31,21 +33,13 @@ SRCDIR = 	src
 OBJS = $(addprefix $(CHECKDIR)/, $(CHECKS:.c=.o))
 SRCOBJS = $(addprefix $(SRCDIR)/, $(SRC:.c=.o))
 
-FLAGS = -g -Wall -Wextra -Werror
-
-$(CHECKDIR)/%.o: %.c
-	cc -c $(FLAGS) $< -o $@
-
-$(SRCDIR)/%.o: %.c
-	cc -c $(FLAGS) $< -o $@
+all: $(NAME)
 
 $(NAME): $(OBJS) $(SRCOBJS)
-	make -C $(LIBFTPATH)
-	cp ./libft/libft.a .
-	mv libft.a $(NAME)
-	ar rc $(NAME) $(OBJS) $(SRCOBJS)
-
-all: $(NAME)
+	$(MAKE) -C $(LIBFTPATH)
+	cp libft/libft.a $(NAME)
+	ar rc $(NAME) $(OBJS)
+	${CC} ${FLAGS} ${OBJS} ${SRCOBJS} ./libft/libft.a -o ${NAME}
 
 clean:
 	rm -f $(OBJS) $(SRCOBJS)

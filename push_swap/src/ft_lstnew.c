@@ -6,11 +6,11 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:46:55 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/07 12:46:01 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/07 15:46:57 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 t_list	*ft_lstnew(int value)
 {

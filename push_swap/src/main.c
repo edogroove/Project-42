@@ -6,11 +6,11 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:18:45 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/07 13:06:39 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/07 15:46:54 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	initStack(t_list **stack, int ac, char **av)
 {

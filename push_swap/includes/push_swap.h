@@ -6,14 +6,14 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:30:12 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/07 11:07:05 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/07 15:46:06 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./libft/libft.h"
+# include "libft.h"
 # include <limits.h>
 
 typedef struct s_list

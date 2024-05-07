@@ -6,11 +6,11 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 21:02:22 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/30 17:55:52 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/07 15:44:11 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 int	initial_checks(char	**result)
 {
