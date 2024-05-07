@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:39:59 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/07 15:44:24 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/07 23:43:56 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	all_checks(int ac, char **av)
 {
 	int			j;
 	char		**result;
-	long int	number;
 
 	if (ac == 2)
 	{
