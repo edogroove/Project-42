@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 18:21:28 by enanni            #+#    #+#             */
-/*   Updated: 2024/02/14 20:26:29 by enanni           ###   ########.fr       */
+/*   Created: 2024/02/10 19:32:14 by enanni            #+#    #+#             */
+/*   Updated: 2024/05/07 12:46:06 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst)
-		return (NULL);
-	while (lst -> next)
-		lst = lst -> next;
-	return (lst);
+	t_list	*temp;
+
+	if (!lst || !new)
+		return ;
+	if (!(*lst))
+	{
+		*lst = new;
+		return ;
+	}
+	temp = *lst;
+	while (temp -> next)
+		temp = temp -> next;
+	temp -> next = new;
 }
 
 /* int	main()
@@ -26,25 +34,29 @@ t_list	*ft_lstlast(t_list *lst)
 	t_list	*head;
 	t_list	*mid;
 	t_list	*end;
-	t_list	*res;
+	t_list	*new;
+	t_list	*tmp;
 
 	head = ft_lstnew("head");
 	mid = ft_lstnew("mid");
 	end = ft_lstnew("end");
+	new = ft_lstnew("new");
 
 	head -> next = mid;
 	mid -> next = end;
 	end -> next = NULL;
 	
-	printf("%s\n", (char *)head -> content);
-	printf("%s\n", (char *)head -> next -> content);
-	printf("%s\n\n", (char *)head -> next -> next -> content);
+	ft_lstadd_back(&head, new);
+	
+	tmp = &*head;
 
-	res = ft_lstlast(head);
-	printf("%s\n", (char *)res -> content);
-
-	free(end);
+	while(head != NULL)
+	{
+		printf("%s\n", (char *)head -> content);
+		head = head -> next;
+	}
+	free(tmp);
 	free(mid);
-	free(head);
-	return (0);
+	free(end);
+	free(new);
 } */

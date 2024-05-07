@@ -8,7 +8,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
-				"push_swap",
+				"../push_swap",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

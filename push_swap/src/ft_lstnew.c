@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:46:55 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/03 17:01:56 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/07 12:46:01 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-t_list	*ft_lstnew(int num)
+t_list	*ft_lstnew(int value)
 {
 	t_list	*elem;
 
 	elem = malloc(sizeof(t_list));
 	if (elem == NULL)
 		return (NULL);
-	elem -> content = num;
+	elem -> value = value;
+	elem -> index = -1;
 	elem -> next = NULL;
 	return (elem);
 }
@@ -29,7 +30,7 @@ t_list	*ft_lstnew(int num)
 	t_list *node;
 	char *str = "Test 555";
 	node = ft_lstnew(str);
-	printf("%s\n", (char *)node -> content);
+	printf("%s\n", (char *)node -> value);
 	free(node);
 	return (0);
 } */

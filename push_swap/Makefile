@@ -6,40 +6,49 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 18:35:25 by enanni            #+#    #+#              #
-#    Updated: 2024/05/03 15:53:01 by enanni           ###   ########.fr        #
+#    Updated: 2024/05/07 13:20:15 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+
 LIBFTPATH = ./libft
 LIBFTNAME = libft.a
 
-SRCS =	av_check.c \
-		main.c \
-		av_check_duplicate.c \
-		av_check_utils.c \
-		initial_checks.c \
-		all_checks.c
+CHECKS =	av_check.c \
+			av_check_duplicate.c \
+			av_check_utils.c \
+			initial_checks.c \
+			all_checks.c
 
-OBJDIR = checks
+SRC =		main.c \
+			ft_lstnew.c \
+			ft_lstadd_back.c
 
-OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
+CHECKDIR = 	checks
+SRCDIR = 	src
+
+OBJS = $(addprefix $(CHECKDIR)/, $(CHECKS:.c=.o))
+SRCOBJS = $(addprefix $(SRCDIR)/, $(SRC:.c=.o))
 
 FLAGS = -g -Wall -Wextra -Werror
 
-$(OBJDIR)/%.o: %.c
+$(CHECKDIR)/%.o: %.c
 	cc -c $(FLAGS) $< -o $@
 
-$(NAME): $(OBJS)
-	make bonus -C $(LIBFTPATH)
+$(SRCDIR)/%.o: %.c
+	cc -c $(FLAGS) $< -o $@
+
+$(NAME): $(OBJS) $(SRCOBJS)
+	make -C $(LIBFTPATH)
 	cp ./libft/libft.a .
 	mv libft.a $(NAME)
-	ar rc $(NAME) $(OBJS)
+	ar rc $(NAME) $(OBJS) $(SRCOBJS)
 
 all: $(NAME)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(SRCOBJS)
 	make -C $(LIBFTPATH) clean
 
 fclean: clean

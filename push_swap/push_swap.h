@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:30:12 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/03 17:29:19 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/07 11:07:05 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # include "./libft/libft.h"
 # include <limits.h>
+
+typedef struct s_list
+{
+	int				value;
+	int				index;
+	struct s_list	*next;
+}					t_list;
 
 int		main(int ac, char **av);
 char	**av_one_arg(char **av);
@@ -29,5 +36,8 @@ int		initial_checks(char	**result);
 int		initial_checks_2(char **av);
 void	check_limits(char **result);
 int		all_checks(int ac, char **av);
+void	initStack(t_list **stack, int ac, char **av);
+t_list	*ft_lstnew(int content);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif
