@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:18:45 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/07 15:46:54 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/08 10:39:17 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ int	main(int ac, char **av)
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_b = NULL;
 	initStack(stack_a, ac, av);
-
+	printf("aaaaaaaaaaaaa");
 	return (0);
 }
