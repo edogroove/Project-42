@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:30:12 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/07 15:46:06 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/09 23:52:08 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,9 @@ int		all_checks(int ac, char **av);
 void	initStack(t_list **stack, int ac, char **av);
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void	index_stack(t_list **stack);
+t_list	*get_min(t_list **stack);
+void	free_stack(t_list **stack);
+int		check_sort(t_list **stack);
 
 #endif
