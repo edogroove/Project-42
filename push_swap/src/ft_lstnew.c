@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:46:55 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/07 15:46:57 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/09 12:36:32 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ t_list	*ft_lstnew(int value)
 
 	elem = malloc(sizeof(t_list));
 	if (elem == NULL)
+	{
 		return (NULL);
+		free(elem);
+	}
 	elem -> value = value;
 	elem -> index = -1;
 	elem -> next = NULL;

@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:18:45 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/08 10:39:17 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/09 12:42:26 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,29 +30,22 @@ void	initStack(t_list **stack, int ac, char **av)
 	{
 		new = ft_lstnew(ft_atoi(args[i]));
 		ft_lstadd_back(stack, new);
+		free(new);
 		i++;
 	}
-	i = 1;
-	while (args[i])
-	{
-		printf("%d", new -> value);
-		new = new -> next;
-	}
-/* 	index_stack(stack);
-	if (ac == 2)
-		ft_free(args); */
+	free(stack);
 }
 
 int	main(int ac, char **av)
 {
 	t_list **stack_a;
-	t_list **stack_b;
+	//t_list **stack_b;
 
 	all_checks(ac, av);
 	stack_a = (t_list **)malloc(sizeof(t_list));
-	stack_b = (t_list **)malloc(sizeof(t_list));
-	*stack_b = NULL;
+	//stack_b = (t_list **)malloc(sizeof(t_list));
+	*stack_a = NULL;
+	//*stack_b = NULL;
 	initStack(stack_a, ac, av);
-	printf("aaaaaaaaaaaaa");
 	return (0);
 }
