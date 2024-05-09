@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 18:35:25 by enanni            #+#    #+#              #
-#    Updated: 2024/05/09 15:55:42 by enanni           ###   ########.fr        #
+#    Updated: 2024/05/07 17:53:18 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 LIBFTPATH = ./libft
 LIBFTNAME = libft.a
-CFLAGS = -g -Wall -Wextra -Werror -I./includes/
+FLAGS = -g -Wall -Wextra -Werror -I./includes/
 CC = gcc
 
 CHECKS =	av_check.c \
@@ -25,8 +25,7 @@ CHECKS =	av_check.c \
 
 SRC =		main.c \
 			ft_lstnew.c \
-			ft_lstadd_back.c \
-			utils.c
+			ft_lstadd_back.c
 
 CHECKDIR = 	checks
 SRCDIR = 	src
@@ -40,7 +39,7 @@ $(NAME): $(OBJS) $(SRCOBJS)
 	$(MAKE) -C $(LIBFTPATH)
 	cp libft/libft.a $(NAME)
 	ar rc $(NAME) $(OBJS)
-	${CC} ${CFLAGS} ${OBJS} ${SRCOBJS} ./libft/libft.a -o ${NAME}
+	${CC} ${FLAGS} ${OBJS} ${SRCOBJS} ./libft/libft.a -o ${NAME}
 
 clean:
 	rm -f $(OBJS) $(SRCOBJS)
@@ -53,5 +52,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
-.SILENT:

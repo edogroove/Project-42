@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:39:59 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/09 15:43:56 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/07 23:43:56 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 int	all_checks(int ac, char **av)
 {
+	int			j;
 	char		**result;
 
 	if (ac == 2)
 	{
+		j = 0;
 		result = av_one_arg(av);
 		if (initial_checks(result) == 1)
 			return (0);
@@ -25,6 +27,9 @@ int	all_checks(int ac, char **av)
 		free_string_array(result);
 	}
 	if (ac > 2)
+	{
+		j = 1;
 		initial_checks_2(av);
+	}
 	return (0);
 }
