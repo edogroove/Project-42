@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   all_checks.c                                       :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 11:39:59 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/09 15:43:56 by enanni           ###   ########.fr       */
+/*   Created: 2024/05/09 14:10:38 by enanni            #+#    #+#             */
+/*   Updated: 2024/05/09 15:50:46 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	all_checks(int ac, char **av)
+void	free_stack(t_list **stack)
 {
-	char		**result;
+	t_list *head;
+	t_list *temp;
 
-	if (ac == 2)
+	head = *stack;
+	while (head)
 	{
-		result = av_one_arg(av);
-		if (initial_checks(result) == 1)
-			return (0);
-		check_limits(result);
-		free_string_array(result);
+		temp = head;
+		head = head->next;
+		free(temp);
 	}
-	if (ac > 2)
-		initial_checks_2(av);
-	return (0);
+	free(stack);
 }
