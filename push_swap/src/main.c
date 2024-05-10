@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:18:45 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/09 23:55:24 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/10 11:26:58 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int	check_sort(t_list **stack)
 {
-	t_list *head;
+	t_list	*head;
 
 	head = *stack;
 	while (head && head->next)
 	{
 		if (head->value > head->next->value)
-			return(0);
+			return (0);
 		head = head->next;
 	}
-	return(1);
+	return (1);
 }
 
 t_list	*get_min(t_list **stack)
@@ -50,22 +50,7 @@ t_list	*get_min(t_list **stack)
 	return (min);
 }
 
-
-void	index_stack(t_list **stack)
-{
-	t_list	*head;
-	int		index;
-
-	index = 0;
-	head = get_min(stack);
-	while (head)
-	{
-		head->index = index++;
-		head = get_min(stack);
-	}
-}
-
-void	initStack(t_list **stack, int ac, char **av)
+void	init_stack(t_list **stack, int ac, char **av)
 {
 	t_list	*new;
 	char	**args;
@@ -85,28 +70,26 @@ void	initStack(t_list **stack, int ac, char **av)
 		ft_lstadd_back(stack, new);
 		i++;
 	}
-	index_stack(stack);
 	if (ac == 2)
 		free_string_array(args);
 }
 
 int	main(int ac, char **av)
 {
-	t_list **stack_a;
-	t_list **stack_b;
+	t_list	**stack_a;
+	t_list	**stack_b;
 
 	all_checks(ac, av);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
-	initStack(stack_a, ac, av);
-	if(check_sort(stack_a) == 1)
+	init_stack(stack_a, ac, av);
+	if (check_sort (stack_a) == 1)
 	{
 		free_stack(stack_a);
 		free_stack(stack_b);
 		return (0);
 	}
-
 	return (0);
 }

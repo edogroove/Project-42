@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 23:55:46 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/09 23:56:02 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/10 10:09:43 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	free_stack(t_list **stack)
 {
-	t_list *head;
-	t_list *temp;
+	t_list	*head;
+	t_list	*temp;
 
 	head = *stack;
 	while (head)
