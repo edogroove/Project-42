@@ -6,11 +6,11 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 09:43:23 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/14 14:33:39 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/14 08:05:59 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "libft.h"
 
 static int	ft_formats(char format, va_list args)
 {
@@ -119,5 +119,4 @@ int	ft_printf(const char *format_input, ...)
 	printf("N: %d\n", ft_printf("%%d: %d, %%s: %s\n", n, str));
 	printf("N: %d\n", printf("%%d: %d, %%s: %s\n", n, str));
 	return (0);
-}
- */
+} */

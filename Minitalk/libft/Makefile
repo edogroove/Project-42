@@ -6,9 +6,12 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 11:37:03 by enanni            #+#    #+#              #
-#    Updated: 2024/03/02 10:28:40 by enanni           ###   ########.fr        #
+#    Updated: 2024/05/14 14:50:19 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+GREEN := $(shell tput -Txterm setaf 2)
+RESET := $(shell tput -Txterm sgr0)
 
 NAME = libft.a
 SRCS =	ft_isalpha.c \
@@ -44,7 +47,13 @@ SRCS =	ft_isalpha.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c \
+		ft_printf.c \
+		ft_hexa.c \
+		ft_int.c \
+		ft_ptr.c \
+		ft_str.c \
+		ft_unsigned.c
 
 BSRC =	ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \
@@ -59,11 +68,12 @@ BSRC =	ft_lstnew_bonus.c \
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRC:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror -I../includes/
+FLAGS = -g -Wall -Wextra -Werror
 
-$(NAME):
-		cc -c $(CFLAGS) $(SRCS)
-		ar rc $(NAME) $(OBJS)
+$(NAME):	bonus
+			cc -c $(FLAGS) $(SRCS)
+			ar rc $(NAME) $(OBJS) $(BOBJS)
+			@echo "$(GREEN)[LIBFT COMPILED]$(RESET)"
 
 bonus:		$(BOBJS) $(OBJS)
 			ar rc $(NAME) $(BOBJS) $(OBJS)
@@ -75,7 +85,10 @@ clean:
 
 fclean:		clean
 			rm -f $(NAME)
+			@echo "$(GREEN)[LIBFT DELETED]$(RESET)"
 
 re:			fclean all
 
 .PHONY:		all clean fclean re bonus
+
+.SILENT:

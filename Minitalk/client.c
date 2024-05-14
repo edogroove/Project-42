@@ -6,12 +6,11 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 06:00:28 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/14 06:18:12 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/14 08:10:26 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./printf/includes/ft_printf.h"
-#include "./printf/includes/libft.h"
+#include "libft/libft.h"
 #include <signal.h>
 #include <stdio.h>
 #include <string.h>

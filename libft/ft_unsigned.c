@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prt_hexa.c                                         :+:      :+:    :+:   */
+/*   ft_unsigned.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/02 09:58:07 by enanni            #+#    #+#             */
-/*   Updated: 2024/03/26 10:48:17 by enanni           ###   ########.fr       */
+/*   Created: 2024/03/02 09:59:59 by enanni            #+#    #+#             */
+/*   Updated: 2024/05/14 06:58:20 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-static size_t	h_digits(unsigned int n)
+static size_t	u_digits(unsigned int n)
 {
 	size_t	digits;
 
@@ -21,27 +21,23 @@ static size_t	h_digits(unsigned int n)
 		return (1);
 	while (n != 0)
 	{
+		n /= 10;
 		digits += 1;
-		n /= 16;
 	}
 	return (digits);
 }
 
-static void	put_hexa(unsigned int nbr, bool upper_case)
+void	put_unsigned(unsigned int nbr)
 {
-	static char	upper_digits[] = "0123456789ABCDEF";
-	static char	lower_digits[] = "0123456789abcdef";
+	static char	digits[] = "0123456789";
 
-	if (nbr >= 16)
-		put_hexa((nbr / 16), upper_case);
-	if (upper_case == true)
-		write(1, &upper_digits[nbr % 16], 1);
-	else
-		write(1, &lower_digits[nbr % 16], 1);
+	if (nbr > 9)
+		put_unsigned(nbr / 10);
+	write(1, &digits[nbr % 10], 1);
 }
 
-int	ft_hexa(unsigned int nbr, bool upper_case)
+int	ft_unsigned(unsigned int nbr)
 {
-	put_hexa(nbr, upper_case);
-	return (h_digits(nbr));
+	put_unsigned(nbr);
+	return (u_digits(nbr));
 }

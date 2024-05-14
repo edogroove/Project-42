@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsigned.c                                      :+:      :+:    :+:   */
+/*   ft_ptr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/02 09:59:59 by enanni            #+#    #+#             */
-/*   Updated: 2024/04/04 08:54:17 by enanni           ###   ########.fr       */
+/*   Created: 2024/03/02 09:59:03 by enanni            #+#    #+#             */
+/*   Updated: 2024/05/14 06:58:02 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-static size_t	u_digits(unsigned int n)
+static size_t	p_digits(unsigned long long n)
 {
 	size_t	digits;
 
@@ -21,23 +21,26 @@ static size_t	u_digits(unsigned int n)
 		return (1);
 	while (n != 0)
 	{
-		n /= 10;
 		digits += 1;
+		n /= 16;
 	}
 	return (digits);
 }
 
-void	put_unsigned(unsigned int nbr)
+static void	put_ptr(unsigned long long addr)
 {
-	static char	digits[] = "0123456789";
+	static char	digits[] = "0123456789abcdef";
 
-	if (nbr > 9)
-		put_unsigned(nbr / 10);
-	write(1, &digits[nbr % 10], 1);
+	if (addr >= 16)
+		put_ptr(addr / 16);
+	write(1, &digits[addr % 16], 1);
 }
 
-int	ft_unsigned(unsigned int nbr)
+int	ft_ptr(void *addr)
 {
-	put_unsigned(nbr);
-	return (u_digits(nbr));
+	if (addr == NULL)
+		return (write(1, "(nil)", 5));
+	write(1, "0x", 2);
+	put_ptr((unsigned long long)addr);
+	return (p_digits((unsigned long long)addr) + 2);
 }

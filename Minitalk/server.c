@@ -6,12 +6,11 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 05:35:25 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/14 06:16:08 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/14 08:11:32 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf/includes/ft_printf.h"
-#include "printf/includes/libft.h"
+#include "libft/libft.h"
 #include <signal.h>
 
 void	sigusr_handler(int signal)

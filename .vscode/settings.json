@@ -5,6 +5,7 @@
 		"get_next_line.h": "c",
 		"sstream": "c",
 		"push_swap.h": "c",
-		"ft_printf.h": "c"
+		"ft_printf.h": "c",
+		"stdarg.h": "c"
 	}
 }
