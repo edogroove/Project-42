@@ -6,11 +6,12 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 11:37:03 by enanni            #+#    #+#              #
-#    Updated: 2024/05/14 14:50:19 by enanni           ###   ########.fr        #
+#    Updated: 2024/05/14 17:29:35 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 GREEN := $(shell tput -Txterm setaf 2)
+RED := $(shell tput -Txterm setaf 1)
 RESET := $(shell tput -Txterm sgr0)
 
 NAME = libft.a
@@ -85,7 +86,7 @@ clean:
 
 fclean:		clean
 			rm -f $(NAME)
-			@echo "$(GREEN)[LIBFT DELETED]$(RESET)"
+			@echo "$(RED)[LIBFT DELETED]$(RESET)"
 
 re:			fclean all
 
