@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 06:00:28 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/15 18:17:50 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/15 18:39:50 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,46 +16,71 @@
 #include <string.h>
 #include <unistd.h>
 
-void send_signal(int pid, unsigned char character)
-{
-    int i;
-    unsigned char temp_char;
+static int	g_receiver;
 
-    i = 8;
-    temp_char = character;
-    while (i > 0)
-    {
-        i--;
-        if ((temp_char >> i) & 1)
-            kill(pid, SIGUSR1);
-        else
-            kill(pid, SIGUSR2);
-        usleep(300);
-    }
+void	sig_handler(int n, siginfo_t *info, void *context)
+{
+	static int	i;
+
+	(void)context;
+	(void)info;
+	(void)n;
+	g_receiver = 1;
+	if (n == SIGUSR2)
+		i++;
 }
 
-int main(int argc, char **argv)
+int	ft_char_to_bin(char c, int pid)
 {
-    struct sigaction sa;
-    pid_t server_pid;
-    const char *message;
-    int i;
+	int	itr;
+	int	bit_index;
 
-    if (argc != 3)
-    {
-        ft_printf("Usage: %s <pid> <message>\n", argv[0]);
-        exit(0);
-    }
-    server_pid = ft_atoi(argv[1]);
-    message = argv[2];
-    i = 0;
+	bit_index = 7;
+	while (bit_index >= 0)
+	{
+		itr = 0;
+		if ((c >> bit_index) & 1)
+			kill(pid, SIGUSR1);
+		else
+			kill(pid, SIGUSR2);
+		while (g_receiver == 0)
+		{
+			if (itr == 50)
+			{
+				ft_printf("No response from server.");
+				exit(1);
+			}
+			itr++;
+			usleep(100);
+		}
+		g_receiver = 0;
+		bit_index--;
+	}
+	return (0);
+}
 
-    ft_memset(&sa, 0, sizeof(sa));
-    sigaction(SIGUSR1, &sa, NULL);
-    sigaction(SIGUSR2, &sa, NULL);
+int	main(int argc, char *argv[])
+{
+	struct sigaction	sa;
+	int					byte_index;
+	int					pid;
 
-    while (message[i])
-        send_signal(server_pid, message[i++]);
-    send_signal(server_pid, '\0');
-    return (0);
+	if (argc != 3)
+	{
+		ft_printf("You need to pass 2 args but u passed");
+		return (1);
+	}
+	byte_index = 0;
+	pid = ft_atoi(argv[1]);
+	sigemptyset(&sa.sa_mask);
+	sa.sa_flags = SA_RESTART | SA_SIGINFO;
+	sa.sa_sigaction = sig_handler;
+	if (sigaction(SIGUSR1, &sa, NULL) == -1)
+		ft_putstr_fd("Error sigaction\n", 1);
+	if (sigaction(SIGUSR2, &sa, NULL) == -1)
+		ft_putstr_fd("Error sigaction\n", 1);
+	while (argv[2][byte_index])
+		ft_char_to_bin(argv[2][byte_index++], pid);
+	ft_char_to_bin('\0', pid);
+	return (0);
 }

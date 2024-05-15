@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 05:35:25 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/15 18:12:33 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/15 18:33:01 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,52 @@
 #include <stdio.h>
 #include <string.h>
 
-void sigusr_handler(int signal)
+void	ft_bin_to_char(int signum, char *c)
 {
-    static unsigned char current_char;
-    static int bit_index;
-
-    current_char |= (signal == SIGUSR1);
-    bit_index++;
-    if (bit_index == 8)
-    {
-        if (current_char == '\0')
-            ft_printf("\n");
-        else
-            ft_printf("%c", current_char);
-        bit_index = 0;
-        current_char = 0;
-    }
-    else
-        current_char <<= 1;
+	if (signum == SIGUSR1)
+		*c = (*c << 1) | 1;
+	else if (signum == SIGUSR2)
+		*c <<= 1;
 }
 
-int main(void)
+void	sig_handler(int signum, siginfo_t *info, void *context)
 {
-    struct sigaction sa;
+	static int		pid;
+	static char		c;
+	static int		i;
 
-    sa.sa_handler = sigusr_handler;
-    sigemptyset(&sa.sa_mask);
-    sa.sa_flags = 0;
-    ft_printf("Server PID: %d\n", getpid());
-    sigaction(SIGUSR1, &sa, NULL);
-    sigaction(SIGUSR2, &sa, NULL);
-    while (1)
-        pause();
-    return 0;
+	(void)context;
+	if (pid == 0)
+		pid = info->si_pid;
+	ft_bin_to_char(signum, &c);
+	if (++i == 8)
+	{
+		i = 0;
+		if (!c)
+		{
+			kill(pid, SIGUSR1);
+			pid = 0;
+			return ;
+		}
+		ft_putchar_fd(c, 1);
+		c = 0;
+	}
+	kill(pid, SIGUSR2);
+}
+
+int	main(void)
+{
+	struct sigaction	sa;
+
+	ft_printf("Server PID: %d\n", getpid());
+	sigemptyset(&sa.sa_mask);
+	sa.sa_flags = SA_RESTART | SA_SIGINFO;
+	sa.sa_sigaction = sig_handler;
+	if (sigaction(SIGUSR1, &sa, NULL) == -1)
+		ft_printf("Error sigaction\n");
+	if (sigaction(SIGUSR2, &sa, NULL) == -1)
+		ft_printf("Error sigaction\n");
+	while (1)
+		pause();
+	return (0);
 }
