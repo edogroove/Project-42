@@ -6,39 +6,46 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 05:35:25 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/14 17:18:00 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/15 18:12:33 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include <signal.h>
+#include <stdio.h>
+#include <string.h>
 
-void	sigusr_handler(int signal)
+void sigusr_handler(int signal)
 {
-	static unsigned char	current_char;
-	static int				bit_index;
+    static unsigned char current_char;
+    static int bit_index;
 
-	current_char |= (signal == SIGUSR1);
-	bit_index++;
-	if (bit_index == 8)
-	{
-		if (current_char == '\0')
-			ft_printf("\n");
-		else
-			ft_printf("%c", current_char);
-		bit_index = 0;
-		current_char = 0;
-	}
-	else
-		current_char <<= 1;
+    current_char |= (signal == SIGUSR1);
+    bit_index++;
+    if (bit_index == 8)
+    {
+        if (current_char == '\0')
+            ft_printf("\n");
+        else
+            ft_printf("%c", current_char);
+        bit_index = 0;
+        current_char = 0;
+    }
+    else
+        current_char <<= 1;
 }
 
-int	main(void)
+int main(void)
 {
-	ft_printf("Server PID: %d", getpid());
-	signal(SIGUSR1, sigusr_handler);
-	signal(SIGUSR2, sigusr_handler);
-	while(1)
-		pause();
-	return(0);
+    struct sigaction sa;
+
+    sa.sa_handler = sigusr_handler;
+    sigemptyset(&sa.sa_mask);
+    sa.sa_flags = 0;
+    ft_printf("Server PID: %d\n", getpid());
+    sigaction(SIGUSR1, &sa, NULL);
+    sigaction(SIGUSR2, &sa, NULL);
+    while (1)
+        pause();
+    return 0;
 }
