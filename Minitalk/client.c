@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 06:00:28 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/15 18:39:50 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/17 17:12:22 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,13 @@ int	main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		ft_printf("You need to pass 2 args but u passed");
+		ft_printf("You need to pass 2 args");
 		return (1);
 	}
 	byte_index = 0;
 	pid = ft_atoi(argv[1]);
+	if (pid <= 0)
+		exit(EXIT_FAILURE);
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = SA_RESTART | SA_SIGINFO;
 	sa.sa_sigaction = sig_handler;
