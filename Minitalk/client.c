@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 06:00:28 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/17 17:12:22 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/18 07:36:03 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <asm/signal.h>
+#include <asm-generic/siginfo.h>
 
 static int	g_receiver;
 
