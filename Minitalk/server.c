@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 05:35:25 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/18 07:36:10 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/20 13:51:59 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include <signal.h>
 #include <stdio.h>
 #include <string.h>
-#include <asm/signal.h>
-#include <asm-generic/siginfo.h>
 
 void	ft_bin_to_char(int signum, char *c)
 {
