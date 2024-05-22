@@ -6,17 +6,14 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 06:00:28 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/20 13:51:54 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/22 11:58:27 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include <signal.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
 
-static int	g_receiver;
+static int	sig_receiver;
 
 void	sig_handler(int n, siginfo_t *info, void *context)
 {
@@ -25,35 +22,36 @@ void	sig_handler(int n, siginfo_t *info, void *context)
 	(void)context;
 	(void)info;
 	(void)n;
-	g_receiver = 1;
+	sig_receiver = 1;
 	if (n == SIGUSR2)
 		i++;
+		
 }
 
-int	ft_char_to_bin(char c, int pid)
+int	char_to_bin(char c, int pid)
 {
-	int	itr;
+	int	timer;
 	int	bit_index;
 
 	bit_index = 7;
 	while (bit_index >= 0)
 	{
-		itr = 0;
+		timer = 0;
 		if ((c >> bit_index) & 1)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		while (g_receiver == 0)
+		while (sig_receiver == 0)
 		{
-			if (itr == 50)
+			if (timer == 50)
 			{
 				ft_printf("No response from server.");
 				exit(1);
 			}
-			itr++;
+			timer++;
 			usleep(100);
 		}
-		g_receiver = 0;
+		sig_receiver = 0;
 		bit_index--;
 	}
 	return (0);
@@ -82,7 +80,7 @@ int	main(int argc, char *argv[])
 	if (sigaction(SIGUSR2, &sa, NULL) == -1)
 		ft_putstr_fd("Error sigaction\n", 1);
 	while (argv[2][byte_index])
-		ft_char_to_bin(argv[2][byte_index++], pid);
-	ft_char_to_bin('\0', pid);
+		char_to_bin(argv[2][byte_index++], pid);
+	char_to_bin('\0', pid);
 	return (0);
 }

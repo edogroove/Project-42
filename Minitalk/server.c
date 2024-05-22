@@ -6,16 +6,14 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 05:35:25 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/20 13:51:59 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/22 11:27:55 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include <signal.h>
-#include <stdio.h>
-#include <string.h>
 
-void	ft_bin_to_char(int signum, char *c)
+void	bin_to_char(int signum, char *c)
 {
 	if (signum == SIGUSR1)
 		*c = (*c << 1) | 1;
@@ -32,7 +30,7 @@ void	sig_handler(int signum, siginfo_t *info, void *context)
 	(void)context;
 	if (pid == 0)
 		pid = info->si_pid;
-	ft_bin_to_char(signum, &c);
+	bin_to_char(signum, &c);
 	if (++i == 8)
 	{
 		i = 0;
