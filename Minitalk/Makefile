@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 06:08:15 by enanni            #+#    #+#              #
-#    Updated: 2024/05/14 17:40:07 by enanni           ###   ########.fr        #
+#    Updated: 2024/05/22 16:09:24 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ RED := $(shell tput -Txterm setaf 1)
 RESET := $(shell tput -Txterm sgr0)
 
 CC = cc
-CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS = -ggdb3 -Wall -Wextra -Werror
 CLIENT_SRCS = client.c
 SERVER_SRCS = server.c
 LIBFT_PATH = libft

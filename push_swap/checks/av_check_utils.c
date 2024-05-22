@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:34:35 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/07 15:44:15 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/22 14:48:57 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ int	is_correct_zero_arr(char **av)
 		write (2, "Error\n", 6);
 		return (1);
 	}
-	if (have_duplicates_arr(av) == 1)
-		return (1);
+	have_duplicates_arr(av);
 	return (0);
 }
 

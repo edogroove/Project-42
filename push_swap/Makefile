@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 18:35:25 by enanni            #+#    #+#              #
-#    Updated: 2024/05/11 15:58:14 by enanni           ###   ########.fr        #
+#    Updated: 2024/05/22 15:46:37 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,9 @@ LIBFTNAME = libft.a
 CFLAGS = -ggdb3 -Wall -Wextra -Werror -I./includes/
 CC = cc
 
-GREEN = \033[0;32m
-NC = \033[0m
+GREEN := $(shell tput -Txterm setaf 2)
+RED := $(shell tput -Txterm setaf 1)
+RESET := $(shell tput -Txterm sgr0)
 
 CHECKS =	av_check.c \
 			av_check_duplicate.c \
@@ -41,11 +42,10 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(SRCOBJS)
 	$(MAKE) -C $(LIBFTPATH)
-	@echo "$(GREEN)LIBFT OK$(NC)"
 	cp libft/libft.a $(NAME)
 	ar rc $(NAME) $(OBJS)
 	${CC} ${CFLAGS} ${OBJS} ${SRCOBJS} ./libft/libft.a -o ${NAME}
-	@echo "$(GREEN)CC OK$(NC)"
+	@echo "$(GREEN)PUSH SWAP COMPILED$(RESET)"
 
 clean:
 	rm -f $(OBJS) $(SRCOBJS)
@@ -54,7 +54,7 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 	make -C $(LIBFTPATH) fclean
-	@echo "$(GREEN)CLEAR OK$(NC)"
+	echo "$(RED)PUSH SWAP DELETED$(RESET)"
 
 re: fclean all
 

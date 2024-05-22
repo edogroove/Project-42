@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 05:35:25 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/22 11:27:55 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/22 18:15:12 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ void	sig_handler(int signum, siginfo_t *info, void *context)
 {
 	static int		pid;
 	static char		c;
-	static int		i;
+	static int		byte_index;
 
 	(void)context;
 	if (pid == 0)
 		pid = info->si_pid;
 	bin_to_char(signum, &c);
-	if (++i == 8)
+	if (++byte_index == 8)
 	{
-		i = 0;
-		if (!c)
+		byte_index = 0;
+		if (c == '\0')
 		{
 			kill(pid, SIGUSR1);
 			pid = 0;

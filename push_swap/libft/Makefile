@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 11:37:03 by enanni            #+#    #+#              #
-#    Updated: 2024/05/10 00:09:14 by enanni           ###   ########.fr        #
+#    Updated: 2024/05/22 16:03:16 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,11 +62,16 @@ BSRC =	ft_lstnew_bonus.c \
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRC:.c=.o)
 
+GREEN := $(shell tput -Txterm setaf 2)
+RED := $(shell tput -Txterm setaf 1)
+RESET := $(shell tput -Txterm sgr0)
+
 FLAGS = -ggdb3 -Wall -Wextra -Werror -I../includes/
 
 $(NAME):
 		cc -c $(FLAGS) $(SRCS)
 		ar rc $(NAME) $(OBJS)
+		@echo "$(GREEN)LIBFT COMPILED$(RESET)"
 
 bonus:		$(BOBJS) $(OBJS)
 			ar rc $(NAME) $(BOBJS) $(OBJS)
@@ -78,6 +83,7 @@ clean:
 
 fclean:		clean
 			rm -f $(NAME)
+			@echo "$(RED)LIBFT DELETED$(RESET)"
 
 re:			fclean all
 

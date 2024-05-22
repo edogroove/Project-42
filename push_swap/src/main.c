@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:18:45 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/10 11:26:58 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/22 16:02:30 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	init_stack(t_list **stack, int ac, char **av)
 		new = ft_lstnew(ft_atoi(args[i]));
 		ft_lstadd_back(stack, new);
 		i++;
+		printf("%d\n", new->value);
 	}
 	if (ac == 2)
 		free_string_array(args);

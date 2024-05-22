@@ -6,25 +6,21 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 06:00:28 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/22 12:18:32 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/22 18:11:48 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include <signal.h>
 
-static int	g_sig_reciever;
+static int	g_signal;
 
 void	sig_handler(int n, siginfo_t *info, void *context)
 {
-	static int	i;
-
 	(void)context;
 	(void)info;
 	(void)n;
-	g_sig_reciever = 1;
-	if (n == SIGUSR2)
-		i++;
+	g_signal = 1;
 }
 
 int	char_to_bin(char c, int pid)
@@ -40,23 +36,23 @@ int	char_to_bin(char c, int pid)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		while (g_sig_reciever == 0)
+		while (g_signal == 0)
 		{
 			if (timer == 50)
 			{
-				ft_printf("No response from server.");
+				ft_printf("No response from server.\n");
 				exit(1);
 			}
 			timer++;
 			usleep(100);
 		}
-		g_sig_reciever = 0;
+		g_signal = 0;
 		bit_index--;
 	}
 	return (0);
 }
 
-int	main(int argc, char *argv[])
+int	main(int argc, char **argv)
 {
 	struct sigaction	sa;
 	int					byte_index;
@@ -64,13 +60,13 @@ int	main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		ft_printf("You need to pass 2 args");
+		ft_printf("Insert 2 args\n");
 		return (1);
 	}
 	byte_index = 0;
 	pid = ft_atoi(argv[1]);
-	if (pid <= 0)
-		exit(EXIT_FAILURE);
+	if (pid <= 1)
+		exit(1);
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = SA_RESTART | SA_SIGINFO;
 	sa.sa_sigaction = sig_handler;

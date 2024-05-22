@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:34:44 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/07 15:44:19 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/22 14:51:07 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ int	have_duplicates_arr(char **av)
 		{
 			if (j != i && str_cmp(av[i], av[j]) == 0)
 			{
-				write (2, "Error\n", 6);
-				return (1);
+				free_string_array(av);
+				ft_display_exit_ps();
 			}
 			j++;
 		}
