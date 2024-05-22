@@ -6,14 +6,14 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 06:00:28 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/22 11:58:27 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/22 12:18:32 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include <signal.h>
 
-static int	sig_receiver;
+static int	g_sig_reciever;
 
 void	sig_handler(int n, siginfo_t *info, void *context)
 {
@@ -22,10 +22,9 @@ void	sig_handler(int n, siginfo_t *info, void *context)
 	(void)context;
 	(void)info;
 	(void)n;
-	sig_receiver = 1;
+	g_sig_reciever = 1;
 	if (n == SIGUSR2)
 		i++;
-		
 }
 
 int	char_to_bin(char c, int pid)
@@ -41,7 +40,7 @@ int	char_to_bin(char c, int pid)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		while (sig_receiver == 0)
+		while (g_sig_reciever == 0)
 		{
 			if (timer == 50)
 			{
@@ -51,7 +50,7 @@ int	char_to_bin(char c, int pid)
 			timer++;
 			usleep(100);
 		}
-		sig_receiver = 0;
+		g_sig_reciever = 0;
 		bit_index--;
 	}
 	return (0);
