@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 06:00:28 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/22 18:11:48 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/23 13:48:54 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	sig_handler(int n, siginfo_t *info, void *context)
 	(void)context;
 	(void)info;
 	(void)n;
+	if (n == SIGUSR1)
+		ft_printf("\nMessage recived\n");
 	g_signal = 1;
 }
 
