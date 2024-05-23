@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 05:35:25 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/22 18:15:12 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/23 12:39:44 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	sig_handler(int signum, siginfo_t *info, void *context)
 		{
 			kill(pid, SIGUSR1);
 			pid = 0;
+			ft_printf("\n-Message received-\n");
 			return ;
 		}
 		ft_putchar_fd(c, 1);

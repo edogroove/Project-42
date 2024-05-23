@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 06:08:15 by enanni            #+#    #+#              #
-#    Updated: 2024/05/22 16:09:24 by enanni           ###   ########.fr        #
+#    Updated: 2024/05/23 12:16:07 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,11 +29,11 @@ $(LIBFT_ARCHIVE):
 	$(MAKE) -C $(LIBFT_PATH)
 
 $(CLIENT_NAME): $(CLIENT_SRCS) $(LIBFT_ARCHIVE)
-	$(CC) $(CFLAGS) -o $@ $(CLIENT_SRCS) $(LIBFT_ARCHIVE)
+	$(CC) $(CFLAGS) -o $(CLIENT_NAME) $(CLIENT_SRCS) $(LIBFT_ARCHIVE)
 	@echo "$(GREEN)[CLIENT COMPILED]$(RESET)"
 
 $(SERVER_NAME): $(SERVER_SRCS) $(LIBFT_ARCHIVE)
-	$(CC) $(CFLAGS) -o $@ $(SERVER_SRCS) $(LIBFT_ARCHIVE)
+	$(CC) $(CFLAGS) -o $(SERVER_NAME) $(SERVER_SRCS) $(LIBFT_ARCHIVE)
 	@echo "$(GREEN)[SERVER COMPILED]$(RESET)"
 
 clean:
