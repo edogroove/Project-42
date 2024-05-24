@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 18:35:25 by enanni            #+#    #+#              #
-#    Updated: 2024/05/22 15:46:37 by enanni           ###   ########.fr        #
+#    Updated: 2024/05/24 12:31:46 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ CHECKS =	av_check.c \
 SRC =		main.c \
 			ft_lstnew.c \
 			ft_lstadd_back.c \
-			utils.c
+			utils.c \
+			moves.c
 
 CHECKDIR = 	checks
 SRCDIR = 	src
