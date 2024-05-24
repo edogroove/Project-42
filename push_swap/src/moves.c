@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:15:39 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/24 12:39:40 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/24 12:49:18 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	sa(t_list *stack)
 	temp = stack->value;
 	stack->value = stack->next->value;
 	stack->next->value = temp;
-	ft_putstr_fd("sa\n", 1);
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_list *stack)
@@ -29,7 +29,7 @@ void	sb(t_list *stack)
 	temp = stack->value;
 	stack->value = stack->next->value;
 	stack->next->value = temp;
-	ft_putstr_fd("sb\n", 1);
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_list *stack_a, t_list *stack_b)
@@ -43,5 +43,5 @@ void	ss(t_list *stack_a, t_list *stack_b)
 	temp2 = stack_b->value;
 	stack_b->value = stack_b->next->value;
 	stack_b->next->value = temp2;
-	ft_putstr_fd("ss\n", 1);
+	write(1, "ss\n", 3);
 }
