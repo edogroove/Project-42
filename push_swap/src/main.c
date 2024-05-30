@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:18:45 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/30 12:47:52 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/30 15:21:51 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	init_stack(t_list **stack, int ac, char **av)
 		new = ft_lstnew(ft_atoi(args[i]));
 		ft_lstadd_back(stack, new);
 		i++;
-		printf("%d\n", new->value); // debug
+		printf("%d\n", new->value);//debug
 	}
 	if (ac == 2)
 		free_string_array(args);
@@ -92,8 +92,7 @@ int	main(int ac, char **av)
 		printf("%d\n", (*stack_a)->value);
 		*stack_a = (*stack_a)->next;
 	}
-	while (*stack_a)
-	if (check_sort (stack_a) == 1)
+	if (check_sort(stack_a) == 1)
 	{
 		free_stack(stack_a);
 		free_stack(stack_b);

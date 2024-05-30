@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:15:39 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/30 12:46:41 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/30 15:16:14 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,20 @@ t_list	*ra(t_list *stack_a)
 	stack_a->next = temp;
 	temp->next = NULL;
 	write(1, "ra\n", 3);
+	return (head);
+}
+
+t_list	*rb(t_list *stack_b)
+{
+	t_list	*temp;
+	t_list	*head;
+
+	temp = stack_b;
+	head = stack_b->next;
+	while (stack_b->next != NULL)
+		stack_b = stack_b->next;
+	stack_b->next = temp;
+	temp->next = NULL;
+	write(1, "rb\n", 3);
 	return (head);
 }

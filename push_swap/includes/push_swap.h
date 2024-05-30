@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:30:12 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/30 11:40:53 by enanni           ###   ########.fr       */
+/*   Updated: 2024/05/30 15:16:35 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void	sa(t_list *stack_a);
 void	sb(t_list *stack_b);
 void	ss(t_list *stack_a, t_list *stack_b);
 t_list	*ra(t_list *stack_a);
+t_list	*rb(t_list *stack_b);
 
 #endif
