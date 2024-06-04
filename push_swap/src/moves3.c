@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   moves3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 18:46:55 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/04 18:54:17 by enanni           ###   ########.fr       */
+/*   Created: 2024/06/04 19:16:42 by enanni            #+#    #+#             */
+/*   Updated: 2024/06/04 19:18:31 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_list	*ft_lstnew(int value)
+void	rrr(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*elem;
+	t_list	*last;
+	t_list	*tmp;
 
-	elem = malloc(sizeof(t_list));
-	if (elem == NULL)
-		return (NULL);
-	elem -> value = value;
-	elem -> next = NULL;
-	return (elem);
+	last = *stack_a;
+	tmp = *stack_a;
+	while (last->next != NULL)
+	{
+		tmp = last;
+		last = last->next;
+	}
+	last->next = *stack_a;
+	*stack_a = last;
+	tmp->next = NULL;
+	last = *stack_b;
+	tmp = *stack_b;
+	while (last->next != NULL)
+	{
+		tmp = last;
+		last = last->next;
+	}
+	last->next = *stack_b;
+	*stack_b = last;
+	tmp->next = NULL;
+	write(1, "rrr\n", 4);
+	return ;
 }
-
-/* int	main()
-{
-	t_list *node;
-	char *str = "Test 555";
-	node = ft_lstnew(str);
-	printf("%s\n", (char *)node -> value);
-	free(node);
-	return (0);
-} */

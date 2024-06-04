@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   utils4.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 18:46:55 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/04 18:54:17 by enanni           ###   ########.fr       */
+/*   Created: 2024/06/04 19:39:33 by enanni            #+#    #+#             */
+/*   Updated: 2024/06/04 19:40:30 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_list	*ft_lstnew(int value)
+int		ft_best_comb_helper(int *arr_a, int *arr_b, int *tmp, int size)
 {
-	t_list	*elem;
+	int	i;
+	int	pos;
 
-	elem = malloc(sizeof(t_list));
-	if (elem == NULL)
-		return (NULL);
-	elem -> value = value;
-	elem -> next = NULL;
-	return (elem);
+	pos = 0;
+	i = -1;
+	while (++i < size)
+	{
+		if (tmp[i] < tmp[pos])
+			pos = i;
+	}
+	free(arr_a);
+	free(arr_b);
+	free(tmp);
+	return (pos);
 }
-
-/* int	main()
-{
-	t_list *node;
-	char *str = "Test 555";
-	node = ft_lstnew(str);
-	printf("%s\n", (char *)node -> value);
-	free(node);
-	return (0);
-} */

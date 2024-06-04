@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 18:46:55 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/04 18:54:17 by enanni           ###   ########.fr       */
+/*   Created: 2024/02/09 16:37:38 by enanni            #+#    #+#             */
+/*   Updated: 2024/06/04 18:19:37 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_list	*ft_lstnew(int value)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*elem;
+	int	size;
 
-	elem = malloc(sizeof(t_list));
-	if (elem == NULL)
-		return (NULL);
-	elem -> value = value;
-	elem -> next = NULL;
-	return (elem);
+	size = 0;
+	while (lst != NULL)
+	{
+		size++;
+		lst = lst -> next;
+	}
+	return (size);
 }
 
 /* int	main()
 {
-	t_list *node;
-	char *str = "Test 555";
-	node = ft_lstnew(str);
-	printf("%s\n", (char *)node -> value);
-	free(node);
-	return (0);
+	t_list *head;
+
+	head = ft_lstnew(NULL);
+	head -> next = ft_lstnew(NULL);
+	printf("%d\n", ft_lstsize(head));
+	free(head -> next);
+	free(head);
 } */
