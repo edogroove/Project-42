@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 18:43:40 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/04 19:42:30 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/10 07:45:51 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_move_a(int a, int b, t_list **stack_a, t_list **stack_b)
 			rra(stack_a);
 	else if (a > 0)
 		while (a-- > 0)
-			ra(*stack_a);
+			ra(stack_a);
 	return (b);
 }
 
@@ -54,7 +54,7 @@ void	ft_move_to_b(t_list **stack_a, t_list **stack_b, int *arr, int max)
 		if (i > 0)
 		{
 			while (i-- > 0)
-				ra(*stack_a);
+				ra(stack_a);
 		}
 		pb(stack_a, stack_b);
 		i = ft_best_nbr_a(*stack_a, --size_a, arr, max);
@@ -78,7 +78,7 @@ void	ft_move_to_a(t_list **stack_a, t_list **stack_b)
 				rrb(stack_b);
 		else if (i > 0)
 			while (i-- > 0)
-				rb(*stack_b);
+				rb(stack_b);
 		pa(stack_b, stack_a);
 		size_a++;
 		size_b--;

@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 18:24:54 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/04 19:19:51 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/10 07:45:17 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	ft_sort_three(t_list **stack_a)
 		x = tmp->value;
 		if ((i > j && j < x && x > i)
 			|| (i > j && j > x && x < i) || (i < j && j > x && x > i))
-			sa(*stack_a);
+			sa(stack_a);
 		if (i > j && j < x && x < i)
-			ra(*stack_a);
+			ra(stack_a);
 		if (i < j && j > x && x < i)
 			rra(stack_a);
 	}

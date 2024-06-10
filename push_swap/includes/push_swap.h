@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:30:12 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/04 19:43:37 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/10 07:43:54 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ t_list	*ft_lstnew(int content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	free_stack(t_list **stack);
 int		check_sort(t_list **stack);
-void	sa(t_list *stack_a);
-void	sb(t_list *stack_b);
-void	ss(t_list *stack_a, t_list *stack_b);
 void	ft_sort(t_list **stack_a, t_list **stack_b, int size);
 void	ft_sort_three(t_list **stack_a);
 void	ft_sort_five(t_list **stack_a, t_list **stack_b);
@@ -47,8 +44,11 @@ void	ft_move_to_a(t_list **stack_a, t_list **stack_b);
 void	ft_search_min(t_list **stack_a, int size);
 int		ft_the_needed_b(int max, int size);
 int		ft_move_a(int a, int b, t_list **stack_a, t_list **stack_b);
-t_list	*ra(t_list *stack_a);
-t_list	*rb(t_list *stack_b);
+void	sa(t_list **stack_a);
+void	sb(t_list **stack_b);
+void	ss(t_list **stack_a, t_list **stack_b);
+void	ra(t_list **stack_a);
+void	rb(t_list **stack_b);
 void	pa(t_list **stack_b, t_list **stack_a);
 void	pb(t_list **stack_a, t_list **stack_b);
 void	rr(t_list **stack_a, t_list **stack_b);

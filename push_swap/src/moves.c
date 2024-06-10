@@ -6,72 +6,93 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:15:39 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/10 06:53:47 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/10 07:43:30 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sa(t_list *stack_a)
+void	sa(t_list **stack_a)
 {
-	int	temp;
+	t_list	*tmp;
+	t_list	*tmp2;
 
-	temp = stack_a->value;
-	stack_a->value = stack_a->next->value;
-	stack_a->next->value = temp;
+	tmp = *stack_a;
+	tmp2 = tmp->next;
+	*stack_a = tmp2;
+	tmp->next = tmp2->next;
+	tmp2->next = tmp;
 	write(1, "sa\n", 3);
+	return ;
 }
 
-void	sb(t_list *stack_b)
+void	sb(t_list **stack_b)
 {
-	int	temp;
+	t_list	*tmp;
+	t_list	*tmp2;
 
-	temp = stack_b->value;
-	stack_b->value = stack_b->next->value;
-	stack_b->next->value = temp;
+	tmp = *stack_b;
+	tmp2 = tmp->next;
+	*stack_b = tmp2;
+	tmp->next = tmp2->next;
+	tmp2->next = tmp;
 	write(1, "sb\n", 3);
+	return ;
 }
 
-void	ss(t_list *stack_a, t_list *stack_b)
+void	ss(t_list **stack_a, t_list **stack_b)
 {
-	int	temp1;
-	int	temp2;
+	t_list	*tmp;
+	t_list	*tmp2;
 
-	temp1 = stack_a->value;
-	stack_a->value = stack_a->next->value;
-	stack_a->next->value = temp1;
-	temp2 = stack_b->value;
-	stack_b->value = stack_b->next->value;
-	stack_b->next->value = temp2;
+	tmp = *stack_a;
+	tmp2 = tmp->next;
+	*stack_a = tmp2;
+	tmp->next = tmp2->next;
+	tmp2->next = tmp;
+	tmp = NULL;
+	tmp2 = NULL;
+	tmp = *stack_b;
+	tmp2 = tmp->next;
+	*stack_b = tmp2;
+	tmp->next = tmp2->next;
+	tmp2->next = tmp;
 	write(1, "ss\n", 3);
+	return ;
 }
 
-t_list	*ra(t_list *stack_a)
+void	ra(t_list **stack_a)
 {
-	t_list	*temp;
-	t_list	*head;
+	t_list	*last;
+	t_list	*first;
 
-	temp = stack_a;
-	head = stack_a->next;
-	while (stack_a->next != NULL)
-		stack_a = stack_a->next;
-	stack_a->next = temp;
-	temp->next = NULL;
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		return ;
+	last = *stack_a;
+	first = *stack_a;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_a = first->next;
+	first->next = NULL;
+	last->next = first;
 	write(1, "ra\n", 3);
-	return (head);
+	return ;
 }
 
-t_list	*rb(t_list *stack_b)
+void	rb(t_list **stack_b)
 {
-	t_list	*temp;
-	t_list	*head;
+	t_list	*last;
+	t_list	*first;
 
-	temp = stack_b;
-	head = stack_b->next;
-	while (stack_b->next != NULL)
-		stack_b = stack_b->next;
-	stack_b->next = temp;
-	temp->next = NULL;
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
+	last = *stack_b;
+	first = *stack_b;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_b = first->next;
+	first->next = NULL;
+	last->next = first;
 	write(1, "rb\n", 3);
-	return (head);
+	return ;
 }
