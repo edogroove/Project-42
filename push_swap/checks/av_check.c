@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:34:27 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/07 15:44:07 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/11 10:56:01 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ char	**av_one_arg(char **av)
 		if ((ft_isdigit(av[1][i]) == 0) && (av[1][i] != 32))
 		{
 			write (2, "Error\n", 6);
-			return (NULL);
+			exit(0);
 		}
 		i++;
 	}

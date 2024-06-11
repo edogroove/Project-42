@@ -9,7 +9,7 @@
 			"request": "launch",
 			"name": "Launch(gdb)",
 			"program": "push_swap/push_swap",
-			"programArgs": "2147483648 5",
+			"programArgs": "54 88 847 8d7",
 			"cwd": "${workspaceRoot}"
 		}
 	]
