@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 21:02:22 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/07 15:44:11 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/11 09:05:48 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ void	check_limits(char **result)
 
 int	initial_checks_2(char **av)
 {
-	int		j;
-	int		number;
-	char	**result;
+	int			j;
+	long int	number;
+	char		**result;
 
 	j = 0;
 	if (is_correct_zero(av) == 1)

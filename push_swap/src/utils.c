@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 23:55:46 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/04 19:32:49 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/11 06:42:11 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	*ft_lis_util_helper(int max)
 {
 	int	*val;
 
-	val = (int *) malloc (sizeof(int) * (max + 1));
+	val = (int *) calloc (max + 1, sizeof(int));
 	if (!val)
 		ft_display_exit_ps();
 	val[max - 1] = 2147483647;

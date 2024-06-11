@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:30:12 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/10 07:43:54 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/11 08:35:25 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	free_stack(t_list **stack);
 int		check_sort(t_list **stack);
 void	ft_sort(t_list **stack_a, t_list **stack_b, int size);
+void	ft_sort_two(t_list **stack_a);
 void	ft_sort_three(t_list **stack_a);
 void	ft_sort_five(t_list **stack_a, t_list **stack_b);
 int		*ft_list_to_array(t_list *stack_a, int size);

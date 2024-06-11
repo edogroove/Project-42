@@ -6,11 +6,28 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 18:24:54 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/10 07:45:17 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/11 08:38:53 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	ft_sort_two(t_list **stack_a)
+{
+	int		i;
+	int		j;
+	t_list *tmp;
+
+	tmp = NULL;
+	i = 0;
+	j = 0;
+	tmp = *stack_a;
+	i = tmp->value;
+	tmp = tmp->next;
+	j = tmp->value;
+	if (i > j)
+	sa(stack_a);
+}
 
 void	ft_sort_three(t_list **stack_a)
 {
