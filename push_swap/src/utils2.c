@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 19:27:59 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/04 19:44:24 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/21 10:50:35 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_the_needed_a(t_list *stack_a, int cont, int size)
 	return (ft_the_needed_b(i, size));
 }
 
-int		*ft_copy_cont(t_list *stack_a, int size)
+int	*ft_copy_cont(t_list *stack_a, int size)
 {
 	int	*arr;
 	int	i;

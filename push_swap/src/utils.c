@@ -6,13 +6,13 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 23:55:46 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/11 06:42:11 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/21 10:51:01 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		ft_best_nbr_b(t_list **stack_b, int size_b, t_list **stack_a, int size_a)
+int	ft_best_nbr_b(t_list **stack_b, int size_b, t_list **stack_a, int size_a)
 {
 	int		*arr_b;
 	int		*arr_a;
@@ -41,7 +41,7 @@ int		ft_best_nbr_b(t_list **stack_b, int size_b, t_list **stack_a, int size_a)
 	return (i);
 }
 
-int		ft_best_nbr_a(t_list *stack_a, int size, int *arr, int max)
+int	ft_best_nbr_a(t_list *stack_a, int size, int *arr, int max)
 {
 	int	pos;
 	int	i;
@@ -89,7 +89,6 @@ int	*ft_lis_util_helper(int max)
 	val[max - 1] = 2147483647;
 	return (val);
 }
-
 
 int	*ft_lis_util(int *dst, int *arr, int max, int size)
 {

@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 18:24:54 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/11 08:38:53 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/21 10:54:19 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_sort_two(t_list **stack_a)
 {
 	int		i;
 	int		j;
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = NULL;
 	i = 0;
@@ -26,7 +26,7 @@ void	ft_sort_two(t_list **stack_a)
 	tmp = tmp->next;
 	j = tmp->value;
 	if (i > j)
-	sa(stack_a);
+		sa(stack_a);
 }
 
 void	ft_sort_three(t_list **stack_a)

@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:18:45 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/11 08:27:20 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/21 10:53:40 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_sort(t_list **stack_a, t_list **stack_b, int size)
 
 	i = 0;
 	if (size == 2)
-		return(ft_sort_two(stack_a));
+		return (ft_sort_two(stack_a));
 	if (size == 3)
 	{
 		ft_sort_three(stack_a);
@@ -66,7 +66,7 @@ void	ft_sort(t_list **stack_a, t_list **stack_b, int size)
 	free (arr);
 }
 
-int		check_sort(t_list **stack)
+int	check_sort(t_list **stack)
 {
 	t_list	*head;
 

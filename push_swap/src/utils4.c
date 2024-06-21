@@ -6,13 +6,13 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 19:39:33 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/04 19:40:30 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/21 10:49:35 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		ft_best_comb_helper(int *arr_a, int *arr_b, int *tmp, int size)
+int	ft_best_comb_helper(int *arr_a, int *arr_b, int *tmp, int size)
 {
 	int	i;
 	int	pos;

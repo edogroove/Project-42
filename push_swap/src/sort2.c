@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 18:43:40 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/10 07:45:51 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/21 10:51:22 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_move_a(int a, int b, t_list **stack_a, t_list **stack_b)
 	return (b);
 }
 
-int		ft_the_needed_b(int max, int size)
+int	ft_the_needed_b(int max, int size)
 {
 	if (max > (size / 2))
 		max = max - size;

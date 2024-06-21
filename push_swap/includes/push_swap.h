@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:30:12 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/11 08:35:25 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/21 10:57:42 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 int		*ft_lis_util(int *dst, int *arr, int max, int size);
 int		*ft_lis_util_helper(int max);
 int		ft_best_nbr_a(t_list *stack_a, int size, int *arr, int max);
-int		ft_best_nbr_b(t_list **stack_b, int size_b, t_list **stack_a, int size_a);
+int		ft_best_nbr_b(t_list **stack_b, int size_b,
+			t_list **stack_a, int size_a);
 int		ft_the_needed(int min, int max, int size);
 int		ft_the_needed_a(t_list *stack_a, int cont, int size);
 int		*ft_copy_cont(t_list *stack_a, int size);

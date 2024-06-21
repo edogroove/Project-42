@@ -6,13 +6,13 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 19:31:07 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/04 19:38:22 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/21 10:50:14 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		ft_max_nbr(int a, int b)
+int	ft_max_nbr(int a, int b)
 {
 	if (a < 0)
 		a *= -1;
@@ -26,7 +26,7 @@ int		ft_max_nbr(int a, int b)
 		return (a);
 }
 
-int		return_max_or_min(int cont, int *max_n_min, int size)
+int	return_max_or_min(int cont, int *max_n_min, int size)
 {
 	if (cont > max_n_min[0])
 		return (max_n_min[2]);
@@ -35,7 +35,7 @@ int		return_max_or_min(int cont, int *max_n_min, int size)
 	return (size + 1);
 }
 
-int		ft_max_or_min(t_list *stack_a, int cont, int size)
+int	ft_max_or_min(t_list *stack_a, int cont, int size)
 {
 	int	max_n_min[5];
 
@@ -62,7 +62,7 @@ int		ft_max_or_min(t_list *stack_a, int cont, int size)
 	return (return_max_or_min(cont, max_n_min, size));
 }
 
-int		ft_min_nbr(int a, int b)
+int	ft_min_nbr(int a, int b)
 {
 	int	a1;
 	int	b1;
@@ -80,7 +80,7 @@ int		ft_min_nbr(int a, int b)
 	return (b1);
 }
 
-int		ft_best_comb(int *arr_a, int *arr_b, int size)
+int	ft_best_comb(int *arr_a, int *arr_b, int size)
 {
 	int	*tmp;
 	int	i;
