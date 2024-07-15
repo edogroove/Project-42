@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:51:09 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/15 16:03:32 by enanni           ###   ########.fr       */
+/*   Updated: 2024/07/15 23:27:00 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	main(int argc, char **argv)
 		printf("Can't open multiple maps\n"); //printf
 		return (1);
 	}
-	mlx = mlx_init;
-	mlx_new_window(mlx, 50, 50, "so_long");
+	mlx = mlx_init();
+	mlx_new_window(mlx, 700, 700, "so_long");
+	pause();
 }
