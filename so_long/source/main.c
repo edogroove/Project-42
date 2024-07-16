@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:51:09 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/15 23:27:00 by enanni           ###   ########.fr       */
+/*   Updated: 2024/07/16 11:53:31 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	check_map_ext(char *argv)
 
 int	main(int argc, char **argv)
 {
-	void	*mlx;
+	t_game	game;
 
 	if (argc == 2 && (check_map_ext(argv[1]) == 1))
 	{
@@ -39,7 +39,6 @@ int	main(int argc, char **argv)
 		printf("Can't open multiple maps\n"); //printf
 		return (1);
 	}
-	mlx = mlx_init();
-	mlx_new_window(mlx, 700, 700, "so_long");
-	pause();
+	else if (argc == 2 && (check_map_ext(argv[1]) == 0))
+		
 }
