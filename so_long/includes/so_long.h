@@ -6,11 +6,12 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 13:19:31 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/16 11:51:55 by enanni           ###   ########.fr       */
+/*   Updated: 2024/07/16 16:24:40 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
+#include "get_next_line.h"
 #include "mlx.h"
 
 typedef struct s_counter
@@ -64,4 +65,15 @@ typedef struct s_point
 	int	y;
 }	t_point;
 
-int	ft_strcmp(const char *s1, const char *s2);
+int			ft_strcmp(const char *s1, const char *s2);
+void		start_game(t_game *game, char *path);
+void		init_map(t_game *game, char *path);
+void		read_map(t_game *game, int fd);
+char		*file_to_string(int fd);
+int			open_file(char *path);
+int			ft_strcmp(const char *s1, const char *s2);
+char		*join_temp_line(char *temp, char *line);
+int			check_empty_line(char *string_map);
+t_counter	init_counter(char *string_map);
+t_counter	new_counter(void);
+int			line_counter(char **map);

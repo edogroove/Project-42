@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/15 13:15:38 by enanni            #+#    #+#              #
-#    Updated: 2024/07/15 23:22:14 by enanni           ###   ########.fr        #
+#    Updated: 2024/07/16 16:24:34 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ NAME = so_long
 MLX = -lmlx -lXext -lX11
 LIB_FLAGS = -L ./libft -lft
 
-SRCS = source/main.c source/utils.c
+SRCS = source/main.c source/utils.c source/get_next_line.c source/get_next_line_utils.c source/map.c
 
 OBJ = $(SRCS:%.c=%.o)
 

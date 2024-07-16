@@ -6,13 +6,53 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:51:09 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/16 11:53:31 by enanni           ###   ########.fr       */
+/*   Updated: 2024/07/16 18:00:12 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-static int	check_map_ext(char *argv)
+void	read_map(t_game *game, int fd)
+{
+	char	*string_map;
+	char	**map;
+
+	string_map = file_to_string(fd);
+	if (check_empty_line(string_map) == 1)
+	{
+		free(string_map);
+		printf("Error: double line\n");
+		exit(1);
+	}
+	map = ft_split(string_map, '\n');
+	game->i = init_counter(string_map);
+	free(((char *)string_map));
+	game->plot.map = map;
+	game->plot.height = line_counter(map);
+	game->plot.length = ft_strlen(map[0]);
+	return ;
+}
+
+void	init_map(t_game *game, char *path)
+{
+	int	fd;
+
+	fd = open(path, O_RDONLY);
+	if (fd < 0)
+	{
+		printf("Error: Invalid file\n"); //printf
+		exit(1);
+	}
+	read_map(game, fd);
+}
+
+void	start_game(t_game *game, char *path)
+{
+	init_map(game, path);
+	check_map();
+}
+
+static int	check_map_exten(char *argv)
 {
 	char	*string;
 
@@ -29,16 +69,16 @@ int	main(int argc, char **argv)
 {
 	t_game	game;
 
-	if (argc == 2 && (check_map_ext(argv[1]) == 1))
+	if (argc == 2 && (check_map_exten(argv[1]) == 1))
 	{
-		printf("Format not supported\n"); //printf
+		printf("Error: Format not supported\n"); //printf
 		return (1);
 	}
 	else if (argc > 2)
 	{
-		printf("Can't open multiple maps\n"); //printf
+		printf("Error: Can't open multiple maps\n"); //printf
 		return (1);
 	}
-	else if (argc == 2 && (check_map_ext(argv[1]) == 0))
-		
+	else if (argc == 2 && (check_map_exten(argv[1]) == 0))
+		start_game(&game, argv[1]);
 }
