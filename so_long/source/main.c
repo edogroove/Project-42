@@ -6,13 +6,13 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:51:09 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/16 18:00:12 by enanni           ###   ########.fr       */
+/*   Updated: 2024/07/17 11:40:48 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	read_map(t_game *game, int fd)
+static void	read_map(t_game *game, int fd)
 {
 	char	*string_map;
 	char	**map;
@@ -29,11 +29,11 @@ void	read_map(t_game *game, int fd)
 	free(((char *)string_map));
 	game->plot.map = map;
 	game->plot.height = line_counter(map);
-	game->plot.length = ft_strlen(map[0]);
+	game->plot.lenght = ft_strlen(map[0]);
 	return ;
 }
 
-void	init_map(t_game *game, char *path)
+static void	init_map(t_game *game, char *path)
 {
 	int	fd;
 
@@ -46,10 +46,10 @@ void	init_map(t_game *game, char *path)
 	read_map(game, fd);
 }
 
-void	start_game(t_game *game, char *path)
+static void	start_game(t_game *game, char *path)
 {
 	init_map(game, path);
-	check_map();
+	check_map(game);
 }
 
 static int	check_map_exten(char *argv)

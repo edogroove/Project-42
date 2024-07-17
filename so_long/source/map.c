@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:39:44 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/16 16:25:21 by enanni           ###   ########.fr       */
+/*   Updated: 2024/07/17 11:10:29 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	line_counter(char **map)
 	i = 0;
 	while (map[i])
 	{
-		printf("%s\n", map[i]);
+//		printf("%s\n", map[i]); //printf
 		i++;
 	}
 	return (i);
