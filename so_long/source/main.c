@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:51:09 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/17 11:40:48 by enanni           ###   ########.fr       */
+/*   Updated: 2024/07/17 17:42:42 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ static void	start_game(t_game *game, char *path)
 {
 	init_map(game, path);
 	check_map(game);
+	init_window(game);
 }
 
 static int	check_map_exten(char *argv)
@@ -81,4 +82,5 @@ int	main(int argc, char **argv)
 	}
 	else if (argc == 2 && (check_map_exten(argv[1]) == 0))
 		start_game(&game, argv[1]);
+	free_map(&game); // da toglere
 }

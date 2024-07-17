@@ -6,13 +6,13 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 18:00:30 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/17 12:28:49 by enanni           ###   ########.fr       */
+/*   Updated: 2024/07/17 17:53:03 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-static int	check_lines_size(char **map)
+int	check_lines_size(char **map)
 {
 	size_t	line;
 	int		i;
@@ -56,25 +56,20 @@ int	element_check(t_counter *count)
 
 void	check_map(t_game *game)
 {
-//	int	x;
-//	int	y;
-//	y = 0;
-	if (element_check(&game->i) == 1)
+	int	x;
+	int	y;
+
+	y = 0;
+	basic_validation_map(game);
+	while (game->plot.map[y])
 	{
-		free_map(game);
-		printf("Error: wrong elements number\n");
-		exit(1);
+		x = 0;
+		while (game->plot.map[y][x])
+		{
+			char_validation_map(game, y, x);
+			x++;
+		}
+		y++;
 	}
-	if (shape_check(game) == 1)
-	{
-		free_map(game);
-		printf("Error: the map is not rectangular\n");
-		exit(1);
-	}
-	if (check_lines_size(game->plot.map) == 1)
-	{
-		free_map(game);
-		printf("Error: invalid lines size\n");
-		exit(1);
-	}
+	return ;
 }
