@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/15 13:15:38 by enanni            #+#    #+#              #
-#    Updated: 2024/07/17 17:43:10 by enanni           ###   ########.fr        #
+#    Updated: 2024/07/18 11:57:59 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRCS = 	source/main.c \
 		source/map.c \
 		source/map_utils.c \
 		source/map_utils_2.c \
-		source/window.c
+		source/window.c \
+		source/images.c
 
 OBJ = $(SRCS:%.c=%.o)
 

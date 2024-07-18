@@ -6,17 +6,35 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 13:19:31 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/17 17:53:46 by enanni           ###   ########.fr       */
+/*   Updated: 2024/07/18 12:33:13 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # define SPRITE_SIZE 32
+# define WALL_PATH		"./img/tree.xpm"
+# define FLOOR_PATH		"./img/grass.xpm"
+# define COLLECT_PATH	"./img/collect.xpm"
+# define PORTAL_PATH	"./img/portal.xpm"
+# define CHAR_PATH		"./img/link_sprites/char.xpm"
+# define CHAR_L_PATH	"./img/link_sprites/left_1__.xpm"
+# define CHAR_R_PATH	"./img/link_sprites/right_1__.xpm"
+# define CHAR_U_PATH	"./img/link_sprites/up_1__.xpm"
 
 # include "../libft/libft.h"
 # include "get_next_line.h"
 # include "mlx.h"
+
+enum e_state
+{
+	event_ending = -1,
+	game_over = -1,
+	error = 2,
+	file_error = 3,
+	map_char_error = 4,
+	image_init = 5,
+};
 
 typedef struct s_counter
 {
@@ -87,5 +105,7 @@ int			element_check(t_counter *count);
 int			shape_check(t_game *game);
 void		char_validation_map(t_game *game, int y, int x);
 void		init_window(t_game *game);
+void		init_images(t_game *game);
+void		render_map(t_game *game);
 
 #endif
