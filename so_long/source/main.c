@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:51:09 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/18 12:07:06 by enanni           ###   ########.fr       */
+/*   Updated: 2024/07/19 12:24:19 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ static void	start_game(t_game *game, char *path)
 	init_window(game);
 	init_images(game);
 	render_map(game);
+	init_triggers(game, KEY_RELEASE, KEY_RELEASE_MASK, key_check);
+	init_triggers(game, DESTROY_NOTIFY, NO_EVENT_MASK, red_cross);
 }
 
 static int	check_map_exten(char *argv)

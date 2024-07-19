@@ -6,11 +6,16 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 10:29:18 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/18 12:04:02 by enanni           ###   ########.fr       */
+/*   Updated: 2024/07/19 12:16:59 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+void	init_triggers(t_game *game, int event, int mask, int (*f)())
+{
+	mlx_hook(game->window_pointer, event, mask, f, game);
+}
 
 static void	render_sprite(t_game *game, int y, int x)
 {

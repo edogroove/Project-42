@@ -6,21 +6,40 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 13:19:31 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/18 12:33:13 by enanni           ###   ########.fr       */
+/*   Updated: 2024/07/19 12:27:18 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # define SPRITE_SIZE 32
-# define WALL_PATH		"./img/tree.xpm"
-# define FLOOR_PATH		"./img/grass.xpm"
+# define WALL_PATH		"./img/wall.xpm"
+# define FLOOR_PATH		"./img/ground.xpm"
 # define COLLECT_PATH	"./img/collect.xpm"
-# define PORTAL_PATH	"./img/portal.xpm"
+# define PORTAL_PATH	"./img/exit.xpm"
 # define CHAR_PATH		"./img/link_sprites/char.xpm"
 # define CHAR_L_PATH	"./img/link_sprites/left_1__.xpm"
 # define CHAR_R_PATH	"./img/link_sprites/right_1__.xpm"
 # define CHAR_U_PATH	"./img/link_sprites/up_1__.xpm"
+
+# define UP		119
+# define DOWN	115
+# define LEFT	97
+# define RIGHT	100
+# define ESC	65307
+# define RED	"\033[1m\033[31m"
+# define GREEN	"\033[1m\033[32m"
+# define ENDC	"\033[0m"
+# define WINDOW_NAME	"./so_long"
+# define SPRITE_SIZE	32
+
+# define KEY_RELEASE	3
+# define DESTROY_NOTIFY	17
+# define EXPOSE		12
+
+# define KEY_RELEASE_MASK	2
+# define NO_EVENT_MASK		0
+# define EXPOSURE_MASK		32768
 
 # include "../libft/libft.h"
 # include "get_next_line.h"
@@ -107,5 +126,8 @@ void		char_validation_map(t_game *game, int y, int x);
 void		init_window(t_game *game);
 void		init_images(t_game *game);
 void		render_map(t_game *game);
+void		init_triggers(t_game *game, int event, int mask, int (*f)());
+int			key_check(int keycode, t_game *game);
+int			red_cross(t_game *game);
 
 #endif
