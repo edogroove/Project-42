@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:51:09 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/19 12:24:19 by enanni           ###   ########.fr       */
+/*   Updated: 2024/09/07 16:23:25 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	read_map(t_game *game, int fd)
 	if (check_empty_line(string_map) == 1)
 	{
 		free(string_map);
-		printf("Error: double line\n");
+		write(1, "Error: double line\n", 19);
 		exit(1);
 	}
 	map = ft_split(string_map, '\n');
@@ -40,7 +40,7 @@ static void	init_map(t_game *game, char *path)
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
 	{
-		printf("Error: Invalid file\n"); //printf
+		write(1, "Error: Invalid file\n", 20);
 		exit(1);
 	}
 	read_map(game, fd);
@@ -55,6 +55,8 @@ static void	start_game(t_game *game, char *path)
 	render_map(game);
 	init_triggers(game, KEY_RELEASE, KEY_RELEASE_MASK, key_check);
 	init_triggers(game, DESTROY_NOTIFY, NO_EVENT_MASK, red_cross);
+	init_triggers(game, EXPOSE, EXPOSURE_MASK, mini_maker);
+	mlx_loop(game->mlx_pointer);
 }
 
 static int	check_map_exten(char *argv)
@@ -76,16 +78,15 @@ int	main(int argc, char **argv)
 
 	if (argc == 2 && (check_map_exten(argv[1]) == 1))
 	{
-		printf("Error: Format not supported\n"); //printf
+		write(1, "Error: Format not supported\n", 28);
 		return (1);
 	}
 	else if (argc > 2)
 	{
-		printf("Error: Can't open multiple maps\n"); //printf
+		write(1, "Error: Can't open multiple maps\n", 33);
 		return (1);
 	}
 	else if (argc == 2 && (check_map_exten(argv[1]) == 0))
 		start_game(&game, argv[1]);
-	pause();
-	free_map(&game); // da toglere
+	return (0);
 }

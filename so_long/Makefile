@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/15 13:15:38 by enanni            #+#    #+#              #
-#    Updated: 2024/07/19 12:29:57 by enanni           ###   ########.fr        #
+#    Updated: 2024/09/07 14:35:11 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,12 @@ SRCS = 	source/main.c \
 		source/map_utils_2.c \
 		source/window.c \
 		source/images.c \
-		source/move.c
+		source/move.c \
+		source/move_down.c \
+		source/move_left.c \
+		source/move_right.c \
+		source/move_up.c \
+		source/exit.c
 
 OBJ = $(SRCS:%.c=%.o)
 

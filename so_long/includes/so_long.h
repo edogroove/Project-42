@@ -6,36 +6,33 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 13:19:31 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/19 12:27:18 by enanni           ###   ########.fr       */
+/*   Updated: 2024/09/07 15:48:25 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# define SPRITE_SIZE 32
+# define SPRITE_SIZE 	32
 # define WALL_PATH		"./img/wall.xpm"
 # define FLOOR_PATH		"./img/ground.xpm"
 # define COLLECT_PATH	"./img/collect.xpm"
 # define PORTAL_PATH	"./img/exit.xpm"
-# define CHAR_PATH		"./img/link_sprites/char.xpm"
-# define CHAR_L_PATH	"./img/link_sprites/left_1__.xpm"
-# define CHAR_R_PATH	"./img/link_sprites/right_1__.xpm"
-# define CHAR_U_PATH	"./img/link_sprites/up_1__.xpm"
+# define CHAR_PATH		"./img/char.xpm"
 
-# define UP		119
-# define DOWN	115
-# define LEFT	97
-# define RIGHT	100
-# define ESC	65307
-# define RED	"\033[1m\033[31m"
-# define GREEN	"\033[1m\033[32m"
-# define ENDC	"\033[0m"
+# define UP				119
+# define DOWN			115
+# define LEFT			97
+# define RIGHT			100
+# define ESC			65307
+# define RED			"\033[1m\033[31m"
+# define GREEN			"\033[1m\033[32m"
+# define ENDC			"\033[0m"
 # define WINDOW_NAME	"./so_long"
 # define SPRITE_SIZE	32
 
 # define KEY_RELEASE	3
 # define DESTROY_NOTIFY	17
-# define EXPOSE		12
+# define EXPOSE			12
 
 # define KEY_RELEASE_MASK	2
 # define NO_EVENT_MASK		0
@@ -45,14 +42,12 @@
 # include "get_next_line.h"
 # include "mlx.h"
 
-enum e_state
+enum e_direction
 {
-	event_ending = -1,
-	game_over = -1,
-	error = 2,
-	file_error = 3,
-	map_char_error = 4,
-	image_init = 5,
+	down,
+	left,
+	right,
+	up,
 };
 
 typedef struct s_counter
@@ -90,9 +85,6 @@ typedef struct s_game
 	t_counter	i;
 	t_draw		plot;
 	t_img		character;
-	t_img		character_l;
-	t_img		character_r;
-	t_img		character_u;
 	t_img		floor;
 	t_img		wall;
 	t_img		collect;
@@ -129,5 +121,12 @@ void		render_map(t_game *game);
 void		init_triggers(t_game *game, int event, int mask, int (*f)());
 int			key_check(int keycode, t_game *game);
 int			red_cross(t_game *game);
+void		print_moves(t_game *game);
+void		move_left(t_game *game);
+void		move_right(t_game *game);
+void		move_down(t_game *game);
+void		move_up(t_game *game);
+int			mini_maker(t_game *game);
+void		destroy_image(t_game *game);
 
 #endif

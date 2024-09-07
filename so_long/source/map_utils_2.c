@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:51:51 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/17 17:52:07 by enanni           ###   ########.fr       */
+/*   Updated: 2024/09/07 16:12:32 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void	char_validation_map(t_game *game, int y, int x)
 	if (wall_check(game, y, x) == 1)
 	{
 		free_map(game);
-		printf("Error: unconfined map\n"); // printf
+		write(1, "Error: unconfined map\n", 22);
 		exit(1);
 	}
 	if (char_check(game, y, x) == 1)
 	{
 		free_map(game);
-		printf("Error: char not valid\n"); // printf
+		write(1, "Error: char not valid\n", 22);
 		exit(1);
 	}
 	return ;
@@ -52,19 +52,19 @@ void	basic_validation_map(t_game *game)
 	if (element_check(&game->i) == 1)
 	{
 		free_map(game);
-		printf("Error: wrong elements number\n"); // printf
+		write(1, "Error: wrong number of elements\n", 32);
 		exit(1);
 	}
 	if (shape_check(game) == 1)
 	{
 		free_map(game);
-		printf("Error: the map is not rectangular\n"); // printf
+		write(1, "Error: the map is not rectangular\n", 34);
 		exit(1);
 	}
 	if (check_lines_size(game->plot.map) == 1)
 	{
 		free_map(game);
-		printf("Error: invalid lines size\n"); // printf
+		write(1, "Error: invalid lines size\n", 26);
 		exit(1);
 	}
 	return ;

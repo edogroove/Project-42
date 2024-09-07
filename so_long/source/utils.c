@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 13:29:42 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/17 16:08:08 by enanni           ###   ########.fr       */
+/*   Updated: 2024/09/07 16:24:43 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	open_file(char *path)
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
 	{
-		printf("Error: Invalid file\n"); // printf
+		write(1, "Error: Invalid file\n", 20);
 		exit(1);
 	}
 	return (fd);

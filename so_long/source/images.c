@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 10:29:18 by enanni            #+#    #+#             */
-/*   Updated: 2024/07/19 12:16:59 by enanni           ###   ########.fr       */
+/*   Updated: 2024/09/07 15:48:19 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,5 @@ void	init_images(t_game *game)
 	game->collect = new_sprite(game->mlx_pointer, COLLECT_PATH);
 	game->portal = new_sprite(game->mlx_pointer, PORTAL_PATH);
 	game->character = new_sprite(game->mlx_pointer, CHAR_PATH);
-	game->character_l = new_sprite(game->mlx_pointer, CHAR_L_PATH);
-	game->character_r = new_sprite(game->mlx_pointer, CHAR_R_PATH);
-	game->character_u = new_sprite(game->mlx_pointer, CHAR_U_PATH);
-	game->state = image_init;
 	return ;
 }
