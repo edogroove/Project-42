@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:12:24 by enanni            #+#    #+#             */
-/*   Updated: 2024/09/09 11:49:26 by enanni           ###   ########.fr       */
+/*   Updated: 2024/09/09 13:39:36 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ int	mini_maker(t_game *game)
 		player_init(game);
 	else
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-		game->character.ptr, game->character.x, game->character.y);
+			game->character.ptr, game->character.x, game->character.y);
 	return (0);
 }
