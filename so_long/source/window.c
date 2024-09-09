@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:12:24 by enanni            #+#    #+#             */
-/*   Updated: 2024/09/07 12:56:45 by enanni           ###   ########.fr       */
+/*   Updated: 2024/09/09 11:49:26 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,8 @@ int	mini_maker(t_game *game)
 	render_map(game);
 	if (game->i.movements == 0)
 		player_init(game);
-	else if (game->character.mem == down)
+	else
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->character.ptr, game->character.x, game->character.y);
-	else if (game->character.mem == left)
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->character.ptr, game->character.x, game->character.y);
-	else if (game->character.mem == right)
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->character.ptr, game->character.x, game->character.y);
-	else if (game->character.mem == up)
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->character.ptr, game->character.x, game->character.y);
+		game->character.ptr, game->character.x, game->character.y);
 	return (0);
 }
