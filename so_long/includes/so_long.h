@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 13:19:31 by enanni            #+#    #+#             */
-/*   Updated: 2024/09/10 12:44:53 by enanni           ###   ########.fr       */
+/*   Updated: 2024/09/10 21:27:06 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,7 @@ void		move_down(t_game *game);
 void		move_up(t_game *game);
 int			mini_maker(t_game *game);
 void		destroy_image(t_game *game);
-int			floodfill(char **map, int y, int x);
+void		playable_check(char **map, int x, int y, int *collectibles, int *exit_found);
+int			can_player_reach_exit(char **map, int collectible_count);
 
 #endif
