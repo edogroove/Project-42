@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 13:19:31 by enanni            #+#    #+#             */
-/*   Updated: 2024/09/10 10:25:46 by enanni           ###   ########.fr       */
+/*   Updated: 2024/09/10 12:44:53 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,5 +128,6 @@ void		move_down(t_game *game);
 void		move_up(t_game *game);
 int			mini_maker(t_game *game);
 void		destroy_image(t_game *game);
+int			floodfill(char **map, int y, int x);
 
 #endif
