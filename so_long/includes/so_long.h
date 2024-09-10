@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 13:19:31 by enanni            #+#    #+#             */
-/*   Updated: 2024/09/09 11:49:59 by enanni           ###   ########.fr       */
+/*   Updated: 2024/09/10 10:25:46 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@
 
 # include "../libft/libft.h"
 # include "get_next_line.h"
-# include "mlx.h"
+# include "../minilibx-linux/mlx.h"
 
 enum e_direction
 {
