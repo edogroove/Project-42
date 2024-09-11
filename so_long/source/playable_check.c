@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:29:46 by enanni            #+#    #+#             */
-/*   Updated: 2024/09/11 04:03:37 by enanni           ###   ########.fr       */
+/*   Updated: 2024/09/11 11:13:04 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	can_player_reach_exit(t_game *game, int collectible_count)
 	params.exit_found = &exit_found;
 	play_check(params, x, y);
 	free_map_copy(game, map_copy);
-	if (exit_found != 1 && collectible_count != 0)
+	if (exit_found != 1 || collectible_count != 0)
 	{
 		error_playable(game);
 	}
