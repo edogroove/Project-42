@@ -6,7 +6,7 @@
 #    By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/15 13:15:38 by enanni            #+#    #+#              #
-#    Updated: 2024/09/10 12:44:35 by enanni           ###   ########.fr        #
+#    Updated: 2024/09/11 03:27:35 by enanni           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,8 @@ SRCS = 	source/main.c \
 		source/move_right.c \
 		source/move_up.c \
 		source/exit.c \
-		source/playable_check.c
+		source/playable_check.c \
+		source/playable_check_2.c
 
 OBJ = $(SRCS:%.c=%.o)
 

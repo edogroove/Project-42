@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:51:09 by enanni            #+#    #+#             */
-/*   Updated: 2024/09/10 21:27:54 by enanni           ###   ########.fr       */
+/*   Updated: 2024/09/11 01:04:32 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	start_game(t_game *game, char *path)
 {
 	init_map(game, path);
 	check_map(game);
-	can_player_reach_exit(game->plot.map, game->i.collectible);
+	can_player_reach_exit(game, game->i.collectible);
 	init_window(game);
 	init_images(game);
 	render_map(game);

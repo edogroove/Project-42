@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 13:19:31 by enanni            #+#    #+#             */
-/*   Updated: 2024/09/10 21:27:06 by enanni           ###   ########.fr       */
+/*   Updated: 2024/09/11 03:54:23 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,13 @@ typedef struct s_point
 	int	y;
 }	t_point;
 
+typedef struct s_play_check_params
+{
+	char	**map;
+	int		*collectable;
+	int		*exit_found;
+}	t_play_check_params;
+
 int			ft_strcmp(const char *s1, const char *s2);
 char		*file_to_string(int fd);
 int			open_file(char *path);
@@ -128,7 +135,9 @@ void		move_down(t_game *game);
 void		move_up(t_game *game);
 int			mini_maker(t_game *game);
 void		destroy_image(t_game *game);
-void		playable_check(char **map, int x, int y, int *collectibles, int *exit_found);
-int			can_player_reach_exit(char **map, int collectible_count);
+void		can_player_reach_exit(t_game *game, int collectible_count);
+void		player_init(t_game *game);
+void		player_finder(t_game *game, int *x, int *y);
+void		free_map_copy(t_game *game, char **map_copy);
 
 #endif
